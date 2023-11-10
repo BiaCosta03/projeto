@@ -39,12 +39,12 @@ if ( isset($_POST['dados']) ) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet'  type='text/css'  href='estilo.css'>
     <title>Cadastro</title>
 </head>
 <body>
-    <h1>Cadastro</h1>
     <form method="post" action="">
-
+    <h1>Cadastro</h1>
         <?php
 
             // Mostra a msg q está na variável global $_SESSION
@@ -70,10 +70,12 @@ if ( isset($_POST['dados']) ) {
         </p>
 
         <input type="hidden" name="dados">
+
+        <p class="logar">
+            <button type="submit" name="logar" value="Logar">Cadastrar</button>
+         </p>
     </form>
 
-    <p>
-        <button type="submit" name="cadastrar" value="cadastrar">Cadastrar</button>
-    </p>
+    
 </body>
 </html>
