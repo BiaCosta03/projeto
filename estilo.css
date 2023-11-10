@@ -6,13 +6,15 @@ body{
 h1{
     background-color:white; 
     text-align: center; 
+    font-family: 'Times New Roman', Times, serif;
 }
 label{
     text-align: left;
     display: block;
     margin-top:30px;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: bold;
 }
 input{
     display: block;
@@ -21,8 +23,9 @@ input{
     border-radius: 30px;
     padding: 0 10px;
     margin-top: 8px;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 14px;
-    font-weight: 300;
+    font-weight: bold;
 }
 form{
     background-color: white;
@@ -43,16 +46,17 @@ button{
     width: 100%;
     background-color: green;
     color: white;
-   padding: 15px 0;
-   font-size: 18px;
-   font-weight: 600;
-   border-radius: 30px;
-   cursor: pointer;
+    padding: 15px 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
 }
 
 .logar{
-  margin-top: 24px;
-  text-align:center;   
+    margin-top: 24px;
+    text-align:center;   
 }
 
 .link{
