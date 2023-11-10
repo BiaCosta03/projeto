@@ -24,12 +24,12 @@ if(isset($_POST['logar'])){
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <link rel='stylesheet'  type='text/css' media='screen' href='estilo.css'>
+    <link rel='stylesheet'  type='text/css'  href='estilo.css'>
     <title>Login</title>
 </head>
-<body>
-    <h1>Login</h1>
+<body> 
     <form action="" method="POST">
+    <h1>Login</h1>
          <p>
             <label>Matrícula</label>
             <input type="Number" name="matricula">
@@ -40,9 +40,9 @@ if(isset($_POST['logar'])){
             <input type="Number" name="senha">
          </p>
 
-         <p>
+         <p class="logar">
             <button type="submit" name="logar" value="Logar">Entrar </button>
-         </br> <a href="cadastro.php">Cadastrar-se<a>
+         </br> <p class="link">Não tem uma conta? <a href="cadastro.php"> Cadastra-se<a></p>
          </p>
     </form>
 </body>
