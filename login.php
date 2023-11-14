@@ -67,8 +67,9 @@ if(isset($_POST['logar'])){
                 echo $aluno;
             }else if($usuario == "prof"){
                 echo $prof;
-            }else ($usuario == "adm")
+            }else ($usuario == "adm"){
                echo $adm;
+            }
         ?>       
     </form>
 </body>
