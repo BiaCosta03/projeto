@@ -2,19 +2,21 @@
 $nomeS=" ";
 $NovaMat=" ";
 $ns=" ";
+$date=" ";
 
 session_start();
 
 $_SESSION['NovaMat']="";
 $_SESSION['ns']="";
 $_SESSION['nomeS']="";
-$_SESSION['dataN']="";
+$_SESSION['date']="";
 
-if(isset($_POST['NovaMat']) && isset($_POST['nomeS']) && isset($_POST['ns'])){
+if(isset($_POST['NovaMat']) && isset($_POST['nomeS']) && isset($_POST['ns']) && isset($_POST['date'])){
             $_SESSION['NovaMat'] = array(
         'nomeS' => $_POST['nomeS'],
         'NovaMat' => $_POST['NovaMat'],
-        'ns' => $_POST['ns']
+        'ns' => $_POST['ns'],
+        'date' => $_POST['date']
       );
 
        header('Location: .php', true, 303);
@@ -22,7 +24,7 @@ if(isset($_POST['NovaMat']) && isset($_POST['nomeS']) && isset($_POST['ns'])){
 
 if ( isset($_POST['dados']) ) {
 
-    $query = "INSERT INTO ".$table." (versao, revisao, data) VALUES ('".$ns."', '".$NovaMat."', '".$nomeS."')";
+    $query = "INSERT INTO ".$table." (versao, revisao, data) VALUES ('".$ns."', '".$NovaMat."', '".$nomeS."', '".$date."')";
 
     $resultado= mysqli_query($conn, $query);
 
@@ -57,14 +59,12 @@ if ( isset($_POST['dados']) ) {
 
         <p>
         <label for="">Nome e Sobrenome:</label>
-        <input type="text" name="nomeS"> 
+        <input type="text" name="nomeS">
         </p>
 
         <p>
             <label for="">Data de Nascimento:</label>
-            Dia<input type="text" name="dia" /><br />
-            Mês<input type="text" name="mes" /><br />
-            Ano<input type="text" name="ano" /><br />
+            <input type="date" name="date"/>
         </p>
 
         <p>
@@ -83,18 +83,6 @@ if ( isset($_POST['dados']) ) {
             <button type="submit" name="logar" value="Logar">Cadastrar</button>
          </p>
 
-
-         <!--PHP Data de Nascimento-->
-         <?php
-            $dia = $_GET['dia'];
-            $mes = $_GET['mes'];
-            $ano = $_GET['ano'];
-            
-            if(checkdate($dataN))
-            echo 'Data válida';
-            else
-            echo 'Data inválida';
-        ?>
     </form>
 
     
