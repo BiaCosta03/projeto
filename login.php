@@ -24,6 +24,7 @@ if(isset($_POST['logar'])){
                 'usuario' => $_POST['usuario'],
                 'end' => $_POST['end']
             );*/
+            header('Location: adm.php', true, 303);
    }
 }
 ?>
