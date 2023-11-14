@@ -1,7 +1,7 @@
 <?php
 session_start()
 
-$_SESSION['adm'] = "";
+$_SESSION['usuario'] = "";
 
 $cadAluno="";
 $cadDisciplina="";
