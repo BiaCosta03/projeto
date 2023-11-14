@@ -2,18 +2,21 @@
 $nomeS=" ";
 $NovaMat=" ";
 $ns=" ";
+$dataN=" ";
 
 session_start();
 
 $_SESSION['NovaMat']="";
 $_SESSION['ns']="";
 $_SESSION['nomeS']="";
+$_SESSION['dataN']="";
 
-if(isset($_POST['NovaMat']) && isset($_POST['nomeS']) && isset($_POST['ns'])){
+if(isset($_POST['NovaMat']) && isset($_POST['nomeS']) && isset($_POST['ns']) && isset($_POST['dataN'])){
             $_SESSION['NovaMat'] = array(
         'nomeS' => $_POST['nomeS'],
         'NovaMat' => $_POST['NovaMat'],
-        'ns' => $_POST['ns']
+        'ns' => $_POST['ns'],
+        'dataN'=> $_POST['dataN']
       );
 
        header('Location: .php', true, 303);
@@ -21,7 +24,7 @@ if(isset($_POST['NovaMat']) && isset($_POST['nomeS']) && isset($_POST['ns'])){
 
 if ( isset($_POST['dados']) ) {
 
-    $query = "INSERT INTO ".$table." (versao, revisao, data) VALUES ('".$ns."', '".$NovaMat."', '".$nomeS."')";
+    $query = "INSERT INTO ".$table." (versao, revisao, data) VALUES ('".$ns."', '".$NovaMat."', '".$nomeS."' '".$dataN."')";
 
     $resultado= mysqli_query($conn, $query);
 
@@ -57,6 +60,11 @@ if ( isset($_POST['dados']) ) {
         <p>
         <label for="">Nome e Sobrenome:</label>
         <input type="text" name="nomeS"> 
+        </p>
+
+        <p>
+            <label for="">Data de Nascimento:</label>
+            <input type="number" name="dataN">
         </p>
 
         <p>
