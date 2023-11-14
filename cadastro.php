@@ -19,7 +19,7 @@ if(isset($_POST['NovaMat']) && isset($_POST['nomeS']) && isset($_POST['ns']) && 
         'date' => $_POST['date']
       );
 
-       header('Location: .php', true, 303);
+       header('Location: adm.php', true, 303);
    }
 
 if ( isset($_POST['dados']) ) {
