@@ -42,7 +42,6 @@ if(isset($_POST['logar'])){
 
          <p class="logar">
             <button type="submit" name="logar" value="Logar">Entrar </button>
-         </br> <p class="link">Não tem uma conta? <a href="cadastro.php"> Cadastra-se<a></p>
          </p>
     </form>
 </body>
