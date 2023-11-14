@@ -2,7 +2,6 @@
 $nomeS=" ";
 $NovaMat=" ";
 $ns=" ";
-$dataN=" ";
 
 session_start();
 
@@ -11,12 +10,11 @@ $_SESSION['ns']="";
 $_SESSION['nomeS']="";
 $_SESSION['dataN']="";
 
-if(isset($_POST['NovaMat']) && isset($_POST['nomeS']) && isset($_POST['ns']) && isset($_POST['dataN'])){
+if(isset($_POST['NovaMat']) && isset($_POST['nomeS']) && isset($_POST['ns'])){
             $_SESSION['NovaMat'] = array(
         'nomeS' => $_POST['nomeS'],
         'NovaMat' => $_POST['NovaMat'],
-        'ns' => $_POST['ns'],
-        'dataN'=> $_POST['dataN']
+        'ns' => $_POST['ns']
       );
 
        header('Location: .php', true, 303);
@@ -24,7 +22,7 @@ if(isset($_POST['NovaMat']) && isset($_POST['nomeS']) && isset($_POST['ns']) && 
 
 if ( isset($_POST['dados']) ) {
 
-    $query = "INSERT INTO ".$table." (versao, revisao, data) VALUES ('".$ns."', '".$NovaMat."', '".$nomeS."' '".$dataN."')";
+    $query = "INSERT INTO ".$table." (versao, revisao, data) VALUES ('".$ns."', '".$NovaMat."', '".$nomeS."')";
 
     $resultado= mysqli_query($conn, $query);
 
@@ -64,7 +62,9 @@ if ( isset($_POST['dados']) ) {
 
         <p>
             <label for="">Data de Nascimento:</label>
-            <input type="number" name="dataN">
+            Dia<input type="text" name="dia" /><br />
+            Mês<input type="text" name="mes" /><br />
+            Ano<input type="text" name="ano" /><br />
         </p>
 
         <p>
@@ -82,6 +82,19 @@ if ( isset($_POST['dados']) ) {
         <p class="logar">
             <button type="submit" name="logar" value="Logar">Cadastrar</button>
          </p>
+
+
+         <!--PHP Data de Nascimento-->
+         <?php
+            $dia = $_GET['dia'];
+            $mes = $_GET['mes'];
+            $ano = $_GET['ano'];
+            
+            if(checkdate($dataN))
+            echo 'Data válida';
+            else
+            echo 'Data inválida';
+        ?>
     </form>
 
     
