@@ -38,7 +38,7 @@ if(isset($_POST['logar'])){
     <title>Login</title>
 </head>
 <body> 
-    <form action="" method="POST">
+    <form action="login.php" method="POST">
     <h1>Login</h1>
          <p>
             <label>Matrícula</label>
