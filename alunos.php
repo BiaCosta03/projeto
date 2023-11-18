@@ -1,18 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aluno</title>
-</head>
-<body>
-<!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Alunos</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    h1 {
+        color: #4B0082;
+    }
+
+    form {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input {
+        margin-bottom: 10px;
+    }
+
+button {
+    background-color: #4B0082;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6A5ACD;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #4B0082;
+    padding: 5px 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #4B0082;
+    color: white;
+}
+    </style>
 </head>
 <body>
     <h1>Sistema de Alunos</h1>
