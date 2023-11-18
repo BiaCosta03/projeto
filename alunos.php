@@ -72,20 +72,5 @@ th {
         <br>
         <button type="submit">Cadastrar</button>
     </form>
-    <table id="alunosTable">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Endereço</th>
-                <th>Email</th>
-                <th>Telefone</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-    <script src="scripts.js"></script>
-</body>
-</html>
 </body>
 </html>
