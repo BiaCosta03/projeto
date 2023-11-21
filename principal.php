@@ -18,7 +18,9 @@
             <p></p>
             </div>
             <div class="login">
-            <form action="login.php" method="POST">
+            
+                <div class="formlogin">
+                <form action="login.php" method="POST">
                 <h1>Login</h1>
 
                 <p>
@@ -31,7 +33,6 @@
                 <input type="Number" name="senha">
                 </p>
 
-                <div class="formlogin">
                     <div class="botaoform">
                         Login
                     </div>
