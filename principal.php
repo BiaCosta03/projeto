@@ -7,11 +7,9 @@
 </head>
 <body>
     <h1>Seja Bem-Vindo(a)</h1>
-    <form action="">
-        <label for="">Esse é um projeto desenvolvido por alunos do IFRN-Campus Canguaretama,
+        <p><h2>Esse é um projeto desenvolvido por alunos do IFRN-Campus Canguaretama,</br>
             tem como objetivo ajudar no desenvolvimento do sistema de gestão escolar da escola municipal
-            Professora Nazaré de Andrade Duarte(ND).
-        </label>
-    </form>
+            Professora Nazaré de Andrade Duarte(ND).</h2>
+        </p>
 </body>
 </html>
