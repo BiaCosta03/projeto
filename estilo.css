@@ -62,3 +62,9 @@ button{
 .link{
     color: rgb(0, 0, 0);
 }
+
+.div-flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

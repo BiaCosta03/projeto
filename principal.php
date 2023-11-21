@@ -10,11 +10,12 @@
     <div class="secao">
         <div class="container">
             <div class="informacoes">
+            <p></p>
             <h1>Seja Bem-Vindo(a)</h1>
-            <p><h3>Esse é um projeto desenvolvido por alunos do IFRN-Campus Canguaretama,</br>
+            <h3>Esse é um projeto desenvolvido por alunos do IFRN-Campus Canguaretama,
             tem como objetivo ajudar no desenvolvimento do sistema de gestão escolar da escola municipal
             Professora Nazaré de Andrade Duarte(ND).</h3>
-            </p>
+            <p></p>
             </div>
             <div class="login">
             <form action="login.php" method="POST">
@@ -32,7 +33,7 @@
 
                 <div class="formlogin">
                     <div class="botaoform">
-                        login
+                        Login
                     </div>
                 </div>
             </div>
