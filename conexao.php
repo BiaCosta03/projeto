@@ -1,12 +1,21 @@
 <?php
 $hostname = "localhost";
 $bancodedados = "sistemaacademico";
-$usuario = "root";
-$senha = " ";
+$professor = "";
+$adm = "";
+$aluno = "";
+$boletim = "";
+$categoria = "";
+$disciplina = "";
+$mat_aluno_turmas = "";
+$mat_professor_turmas = "";
+$turmas = "";
+$turno = "";
 
-$mysqli = new mysqli($hostname, $usuario, $senha, $bancodedados);
-if($mysqli->connect_errno){
-    echo"Falha ao conectar:(".$mysqli->connect_errno. ")" . $mysqli->connect_errno;
+$sistemaacademico = new sistemaacademico($hostname, $bancodedados, $professor,$adm, $aluno, $boletim, $categoria, 
+$disciplina, $mat_aluno_turmas, $mat_professor_turmas, $turmas, $turno);
+if($sistemaacademico->connect_errno){
+    echo"Falha ao conectar:(".$sistemaacademico->connect_errno. ")" . $sistemaacademico->connect_errno;
 }
 else
 echo"conectando ao banco de dados";
