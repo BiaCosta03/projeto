@@ -11,9 +11,9 @@
         <div class="container">
             <div class="informacoes">
             <h1>Seja Bem-Vindo(a)</h1>
-            <p><h2>Esse é um projeto desenvolvido por alunos do IFRN-Campus Canguaretama,</br>
+            <p><h3>Esse é um projeto desenvolvido por alunos do IFRN-Campus Canguaretama,</br>
             tem como objetivo ajudar no desenvolvimento do sistema de gestão escolar da escola municipal
-            Professora Nazaré de Andrade Duarte(ND).</h2>
+            Professora Nazaré de Andrade Duarte(ND).</h3>
             </p>
             </div>
             <div class="login">
@@ -29,10 +29,10 @@
                 <label>Senha</label>
                 <input type="Number" name="senha">
                 </p>
-                
+
                 <div class="formlogin">
                     <div class="botaoform">
-
+                        login
                     </div>
                 </div>
             </div>
