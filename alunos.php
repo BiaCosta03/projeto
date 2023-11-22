@@ -6,31 +6,56 @@
     <title>Sistema de Alunos</title>
     <style>
     body {
-        font-family: Arial, sans-serif;
+        background-image: url(img/logo.jpeg);
     }
 
     h1 {
-        color: #4B0082;
+        color: black;
+        text-align: center;
     }
 
     form {
-        margin-bottom: 20px;
+        background-color: rgba(12, 46, 12, 0.4);
+        height: 550px;
+        width: 390px;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+        border-radius: 40px;
+        backdrop-filter: blur(10px);    
+        padding: 25px 15px;
+        text-align: center;
     }
 
     label {
         display: block;
         margin-bottom: 5px;
-    }
+        text-align: left;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 17px;
+        font-weight: bold;
+}
 
     input {
-        margin-bottom: 10px;
+        margin-bottom: 5px;
+        display: block;
+        height: 37px;
+        width: 90%;
+        border-radius: 30px;
+        padding: 0 20px;
+       
+        
     }
 
 button {
-    background-color: #4B0082;
+    width: 50%;
+    background-color: green;
     color: white;
-    border: none;
-    padding: 5px 10px;
+    padding: 7px 0;
+    font-size: 17px;
+    font-weight: 60;
+    border-radius: 15px;
     cursor: pointer;
 }
 
@@ -55,9 +80,9 @@ th {
 }
     </style>
 </head>
-<body>
-    <h1>Sistema de Alunos</h1>
+<body>  
     <form id="alunoForm">
+    <h1>Sistema de Alunos</h1>
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required>
         <br>
@@ -73,7 +98,7 @@ th {
         <label for="telefone">Telefone:</label>
         <input type="tel" id="telefone" name="telefone" required>
         <br>
-        <a href="principalAluno.php"><button type="submit">Cadastrar</button></a>
+        <button type="submit">Cadastrar</button>
     </form>
 </body>
 </html>

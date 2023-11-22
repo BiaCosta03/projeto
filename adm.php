@@ -41,6 +41,11 @@ if(isset($_POST['adm']) && isset($_POST['cadAluno']) && isset($_POST['cadDiscipl
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIGAP</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+       body {
+        background-image: url(img/logo.jpeg);
+    }
+    </style>
 </head>
 <body>
     <div class="container">
