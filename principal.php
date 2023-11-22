@@ -34,7 +34,7 @@
                 </p>
 
                     <div class="botaoform">
-                        Login
+                        <a href="adm.php">Login</a>
                     </div>
                 </div>
             </div>
