@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Alunos</title>
+    <title>Sistema de Professores</title>
     <style>
-    body {
+        body {
         background-image: url(img/icon.png);
     }
 
@@ -35,7 +35,7 @@
         font-family: 'Times New Roman', Times, serif;
         font-size: 17px;
         font-weight: bold;
-}
+    }
 
     input {
         margin-bottom: 5px;
@@ -48,7 +48,7 @@
         
     }
 
-button {
+    button {
     width: 50%;
     background-color: green;
     color: white;
@@ -57,32 +57,12 @@ button {
     font-weight: 60;
     border-radius: 15px;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #6A5ACD;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    border: 1px solid #4B0082;
-    padding: 5px 10px;
-    text-align: left;
-}
-
-th {
-    background-color: #4B0082;
-    color: white;
-}
+    }
     </style>
 </head>
-<body>  
-    <form id="alunoForm">
-    <h1>Sistema de Alunos</h1>
+<body>
+<form id="profForm">
+    <h1>Sistema de Professores</h1>
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required>
         <br>

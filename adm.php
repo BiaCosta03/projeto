@@ -43,7 +43,7 @@ if(isset($_POST['adm']) && isset($_POST['cadAluno']) && isset($_POST['cadDiscipl
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
        body {
-        background-image: url(img/logo.jpeg);
+        background-image: url(img/icon.png);
     }
     </style>
 </head>
