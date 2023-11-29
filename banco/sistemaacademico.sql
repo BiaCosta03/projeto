@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25/11/2023 às 02:38
+-- Tempo de geração: 29/11/2023 às 19:13
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -49,7 +49,8 @@ CREATE TABLE `aluno` (
   `cpf` int(11) UNSIGNED DEFAULT NULL,
   `telefone` int(11) UNSIGNED DEFAULT NULL,
   `data_nascimento` date DEFAULT NULL,
-  `Cod_Categoria` int(11) DEFAULT NULL
+  `Cod_Categoria` int(11) DEFAULT NULL,
+  `Cod_Turma` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -111,28 +112,6 @@ CREATE TABLE `turnos` (
   `nome` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `vinc_alunos_turmas`
---
-
-CREATE TABLE `vinc_alunos_turmas` (
-  `id` int(11) NOT NULL,
-  `Cod_aluno` int(10) NOT NULL,
-  `Cod_turma` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `vinc_professores_turmas`
---
-
-CREATE TABLE `vinc_professores_turmas` (
-  `idmatricula` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
 --
 -- Índices para tabelas despejadas
 --
@@ -183,18 +162,6 @@ ALTER TABLE `turnos`
   ADD PRIMARY KEY (`idTurnos`);
 
 --
--- Índices de tabela `vinc_alunos_turmas`
---
-ALTER TABLE `vinc_alunos_turmas`
-  ADD PRIMARY KEY (`id`);
-
---
--- Índices de tabela `vinc_professores_turmas`
---
-ALTER TABLE `vinc_professores_turmas`
-  ADD PRIMARY KEY (`idmatricula`);
-
---
 -- AUTO_INCREMENT para tabelas despejadas
 --
 
@@ -239,18 +206,6 @@ ALTER TABLE `turmas`
 --
 ALTER TABLE `turnos`
   MODIFY `idTurnos` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `vinc_alunos_turmas`
---
-ALTER TABLE `vinc_alunos_turmas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `vinc_professores_turmas`
---
-ALTER TABLE `vinc_professores_turmas`
-  MODIFY `idmatricula` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restrições para tabelas despejadas

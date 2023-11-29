@@ -1,9 +1,8 @@
 <?php
-$hostname = "localhost";
-$bancodedados = "sistemaacademico";
-$usuario = "root";
-$senha = "";
+	define('HOST', 'localhost');
+	define('USER', 'root');
+	define('PASS', '');
+	define('BASE', 'sistemaacademico');
 
-    $mysqli = new mysqli($hostname, $usuario, $senha, $bancodedados);
-    
+	$mysqli = new MySQLi(HOST, USER, PASS, BASE);
 ?>
