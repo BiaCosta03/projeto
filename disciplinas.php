@@ -29,24 +29,19 @@
     <tr>
         <th>Disciplina</th>
         <th>Professor</th>
-        <th>Código Dsiciplina</th>
-        <th>Editar</th>
-        <th>Excluir</th>
+        <th>Código Disciplina</th>
     </tr>
     <tr>
         <td>Matemática</td>
         <td>João Silva</td>
         <td>MAT001</td>
-        <td><button>Editar</button></td>
-        <td><button>Excluir</button></td>
     </tr>
     <tr>
         <td>Física</td>
         <td>Maria Silva</td>
         <td>FIS001</td>
-        <td><button>Editar</button></td>
-        <td><button>Excluir</button></td>
     </tr>
 </table>
+<a href="editarDisciplina.php"><button>Editar</button></a> <a href="excluirDisciplina.php"><button>Excluir</button></a>
 </body>
 </html>

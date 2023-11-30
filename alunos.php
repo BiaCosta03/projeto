@@ -53,6 +53,7 @@ button {
     background-color: green;
     color: white;
     padding: 7px 0;
+    margin: 5px;
     font-size: 17px;
     font-weight: 60;
     border-radius: 15px;
@@ -99,6 +100,8 @@ th {
         <input type="tel" id="telefone" name="telefone" required>
         <br>
         <button type="submit">Cadastrar</button>
+        <br>
+        <button type="reset" id="reset" name="Reset">Limpar</button>
     </form>
 </body>
 </html>
