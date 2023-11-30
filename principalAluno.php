@@ -26,7 +26,7 @@
             Menu
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Boletim</a></li><!--Link para o boletim-->
+            <li><a class="dropdown-item" href="boletim.php">Boletim</a></li><!--Link para o boletim-->
           </ul>
         </li>
         <li class="nav-item">
