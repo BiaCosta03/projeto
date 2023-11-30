@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Disciplina</title>
+    <style>
+        body{
+            background-image: url(img/icon.png)
+        }
+        .form{
+            border: 2px solid black;
+            border-radius: 50px
+            text-alig
+        }
+    </style>
 </head>
 <body>
     <form action="disciplinas.php" method="POST">
