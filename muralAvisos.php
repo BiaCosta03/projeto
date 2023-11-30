@@ -16,6 +16,7 @@
             margin: 20px;
             background-color: #f1f1f1;
             border-radius: 5px;
+            border: 2px solid black;
         }
        
         .container {
