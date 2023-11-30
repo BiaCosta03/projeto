@@ -68,6 +68,7 @@ if(isset($_POST['adm']) && isset($_POST['cadAluno']) && isset($_POST['cadDiscipl
                         <a href="professores.php" class="btn btn-primary">Gerenciar Professores</a>
                         <a href="disciplinas.php" class="btn btn-primary">Gerenciar Disciplinas</a>
                         <a href="turmas.php" class="btn btn-primary">Gerenciar Turmas</a>
+                        <a href="muralAvisos.php" class="btn btn-primary">Gerenciar Mural</a>
                     </p>
                 </div>
             </div>
