@@ -1,5 +1,7 @@
 body{
-    background-image: url(img/icon.png);
+    background-image: url('imagem de fundo');/*Precisamos de uma imagem de fundo*/
+    background-repeat: no-repeat;
+    background-size: cover;
  }
  
 .secao{
