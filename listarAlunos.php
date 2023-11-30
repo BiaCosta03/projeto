@@ -11,7 +11,7 @@
 			INNER JOIN categoria AS categorias
 			ON categorias.Cod_Categoria = ma.idCategoria";
 
-	$res = $mysqli->query($sql);
+	$res = $conn->query($sql);
 	$qtd = $res->num_rows;
 
 	if($qtd > 0){

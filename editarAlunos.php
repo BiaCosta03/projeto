@@ -1,7 +1,7 @@
 <h1>Editar Aluno</h1>
 <?php
 	$sql_1 = "SELECT * FROM alunos WHERE idMatricula=".$_REQUEST['idMatricula'];
-	$res_1 = $mysqli->query($sql_1);
+	$res_1 = $conn->query($sql_1);
 	$row_1 = $res_1->fetch_object();
 ?>
 <form action="?page=salvarAluno" method="POST">

@@ -1,20 +1,3 @@
-<?php
-
-session_start();
-
-if(isset ($_POST['aluno'])){
-    
-    $idMatrícula = $_POST['IdMatricula'];
-    $nome = $_POST['nome'];
-    $senha = $_POST['senha'];
-    $cpf = $_POST['cpf'];
-    $telefone = $_POST['telefone'];
-    $data_nascimento = $_POST['data_nascimento'];
-    $Cod_Categoria = $_POST['Cod_Categoria'];
-    $Cod_Turma = $_POST['Cod_Turma'];
-}
-   ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +8,9 @@ if(isset ($_POST['aluno'])){
     <title>Cadastro</title>
 </head>
 <body>
-    <form method="post" action="">
+    <form action="?page=marca-salvar" method="POST">
+	<input type="hidden" name="acao" value="cadastrar">
+	<div class="mb-3">
     <h1>Cadastro</h1>
 
 <p>
