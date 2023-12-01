@@ -10,12 +10,12 @@
     <div class="secao">
         <div class="container">
             <div class="informacoes">
-            <p></p>
+           
             <h1>Seja Bem-Vindo(a)</h1>
-            <h3>Esse é um projeto desenvolvido por alunos do IFRN-Campus Canguaretama,
-            tem como objetivo ajudar no desenvolvimento do sistema de gestão escolar da escola municipal
-            Professora Nazaré de Andrade Duarte(ND).</h3>
-            <p></p>
+            <h3><p>Esse é um projeto desenvolvido por alunos do IFRN-Campus Canguaretama </p>
+            <p>O peincipal objetivo é ajudar no desenvolvimento do sistema de gestão escolar da escola municipal
+            Professora Nazaré de Andrade Duarte(ND).</h3> </p>
+
             </div>
             <div class="login">
             
