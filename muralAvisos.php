@@ -57,7 +57,6 @@ $insert = mysql_query("INSERT INTO recados (nome, site, avisos) VALUES('$nome', 
     </style>
 </head>
 <body>
-<<<<<<< HEAD
 <h1> Mural de avisos </h1>
 <div class="mural">
     <form action="" method="post">
@@ -83,7 +82,6 @@ while ($result = mysql_fetch_array($select)){
 
 </div>
 <?php }?>
-=======
      <div class="container">
         <div class="card">
             <h2>Mural de Avisos</h2>
@@ -93,6 +91,6 @@ while ($result = mysql_fetch_array($select)){
             <button class="button">Atualizar Avisos</button>
         </div>
     </div>
->>>>>>> 9ca60a8e620fc26423c9c1cd931dd62f23ed3d7f
+
 </body>
 </html>
