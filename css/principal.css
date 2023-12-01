@@ -1,5 +1,6 @@
 body{
-    background-image: url('imagem de fundo');/*Precisamos de uma imagem de fundo*/
+   background-color: rgb(10, 85, 20);
+    /*background-image: url('imagem de fundo');Precisamos de uma imagem de fundo*/
     background-repeat: no-repeat;
     background-size: cover;
  }
