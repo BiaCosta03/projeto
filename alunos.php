@@ -49,14 +49,14 @@
     }
 
 button {
-    width: 50%;
+    width: 45%;
     background-color: green;
     color: white;
-    padding: 7px 0;
+    padding: 7px;
     margin: 5px;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 60;
-    border-radius: 15px;
+    border-radius: 20px;
     cursor: pointer;
 }
 
@@ -99,9 +99,8 @@ th {
         <label for="telefone">Telefone:</label>
         <input type="tel" id="telefone" name="telefone" required>
         <br>
-        <button type="submit">Cadastrar</button>
-        <br>
-        <button type="reset" id="reset" name="Reset">Limpar</button>
+        <button type="submit">Cadastrar</button><button type="reset" id="reset" name="Reset">Limpar</button>
+        
     </form>
 </body>
 </html>
