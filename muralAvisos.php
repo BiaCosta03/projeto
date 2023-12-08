@@ -8,9 +8,6 @@ $insert = mysql_query("INSERT INTO recados (nome, site, avisos) VALUES('$nome', 
 
 }
 
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +68,7 @@ $select = mysql_query("SELECT * FROM recados");
 while ($result = mysql_fetch_array($select)){
     $pessoa = $result['$nome'];
     $st = $result['$site'];
-    $avs = $result['avisos'];
+    $avs = $result['$avisos'];
 
 
 ?>

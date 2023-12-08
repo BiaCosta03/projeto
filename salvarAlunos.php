@@ -1,5 +1,5 @@
 <?php
-	switch ($_REQUEST["acao"]) {
+	switch ($_REQUEST["açao"]) {
 		case 'cadastrar':
 			$sql = "INSERT INTO aluno (
 						idMatrícula,
