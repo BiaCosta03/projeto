@@ -1,5 +1,3 @@
-//SUGESTÃO DE PÁGINA ADMIN
-
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -78,19 +76,19 @@
             include('conexao.php');
 
             //include das páginas
-            switch (@$_request['page']){
+            switch (@$_REQUEST['page']){
               case 'cadastrarAlunos':
                 include('cadastrarAlunos.php');
                 break;
-                case 'listarAlunos':
-                  include('listarAlunos.php');
-                  break;
-                  case 'editarAlunos':
-                    include('editarAlunos.php');
-                    break;
-                    case 'salvarAlunos':
-                      include('salvarAlunos.php');
-                      break;
+              case 'listarAlunos':
+                include('listarAlunos.php');
+                break;
+              case 'editarAlunos':
+                include('editarAlunos.php');
+                break;
+              case 'salvarAlunos':
+                include('salvarAlunos.php');
+                break;
 
               default:
               print"";

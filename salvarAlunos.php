@@ -1,15 +1,15 @@
 <?php
-	switch ($_REQUEST["açao"]) {
+	switch ($_REQUEST['acao']) {
 		case 'cadastrar':
 			$sql = "INSERT INTO aluno (
-						idMatrícula,
-						nome,
-						senha,
-						cpf,
-						telefone,
-                        data_nascimento,
-                        Cod_Categoria,
-                        Cod_Turma
+					idMatricula,
+					nome,
+					senha,
+					cpf,
+					telefone,
+					data_nascimento,
+					Cod_Categoria,
+					Cod_Turma                                                                                                              
 					)VALUES(
 						".$_POST["idMatricula"].",
 						'".$_POST["nome"]."',
@@ -18,17 +18,17 @@
 						'".$_POST["telefone"]."',
                         '".$_POST["data_nascimento"]."',
 						'".$_POST["Cod_Categoria"]."',
-						'".$_POST["Cod_turma"]."'
+						'".$_POST["Cod_Turma"]."'
 					)";
 
 			$res = $conn->query($sql);
 
 			if($res==true){
 				print "<script>alert('Cadastrou com sucesso!');</script>";
-				print "<script>location.href='?page=modelo-listar';</script>";
+				print "<script>location.href='?page=listaAlunos';</script>";
 			}else{
 				print "<script>alert('Não foi possível!');</script>";
-				print "<script>location.href='?page=modelo-listar';</script>";
+				print "<script>location.href='?page=listarAluos';</script>";
 			}
 			break;
 		

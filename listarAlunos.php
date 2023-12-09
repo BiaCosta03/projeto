@@ -1,17 +1,8 @@
-<?php
-	if(isset($_SESSION['mensagem'])){
-		echo $_SESSION['mensagem'];
-		unset($_SESSION['mensagem']);
-	}
-    
-?>
 <h1>Listar Alunos</h1>
 <?php
-	$sql = "SELECT * FROM aluno AS aluno
-			INNER JOIN categoria AS categorias
-			ON categorias.Cod_Categoria = ma.idCategoria";
-
-	$res = $conn->query($sql);
+	include("conexao.php");
+	$sql = "SELECT * FROM alunos";
+	$res = $conn->query($sql) or die($conn->error);
 	$qtd = $res->num_rows;
 
 	if($qtd > 0){
