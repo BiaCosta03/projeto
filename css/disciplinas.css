@@ -1,0 +1,20 @@
+#disciplinas{
+    margin-top: 100px;
+}
+
+#disciplinas_search{
+    margin-top: 50px;
+}
+
+#div_tabela{
+    overflow-x: auto;
+    height: 390px;
+}
+body{
+    background-color:darkseagreen;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#table_disciplinas{
+    color:black;
+    background-color: aliceblue;
+}

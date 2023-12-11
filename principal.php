@@ -13,7 +13,7 @@
            
             <h1>Seja Bem-Vindo(a)</h1>
             <h3><p>Esse é um projeto desenvolvido por alunos do IFRN-Campus Canguaretama </p>
-            <p>O peincipal objetivo é ajudar no desenvolvimento do sistema de gestão escolar da escola municipal
+            <p>O principal objetivo é ajudar no desenvolvimento do sistema de gestão escolar da escola municipal
             Professora Nazaré de Andrade Duarte(ND).</h3> </p>
 
             </div>
