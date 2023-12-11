@@ -4,6 +4,13 @@
 	$username = "root";
 	$password = "";
 
-	$conn = mysqli_connect($servername, $username, $password, $database);
+	$conn = new Mysqli($servername, $username, $password, $database);
 	mysqli_close($conn);
+	
+
+	if (!$conn) {
+	("Connection failed: " . mysqli_connect_error()); 
+}
+	
+	
 ?>

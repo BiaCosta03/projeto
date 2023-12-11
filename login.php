@@ -42,12 +42,14 @@ if(isset($_POST['logar'])){
     <h1>Login</h1>
          <p>
             <label>Matrícula</label>
-            <input type="Number" name="matricula">
+            <input type="text" name="matricula" 
+            class= "form-control">
          </p>
 
          <p>
             <label>Senha</label>
-            <input type="Number" name="senha">
+            <input type="password" name="senha"
+            class= "form-control">
          </p>
          <?php
             if($usuario == "aluno"){
