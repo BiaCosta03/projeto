@@ -14,7 +14,6 @@
 		print "<p>Encontrou <b>$qtd</b> resultado(s).</p>";
 		print "<table class='table table-bordered table-striped table-hover'>";
 		print "<tr>";
-		print "<th>#</th>";
 		print "<th>Nome</th>";
 		print "<th>Matricula</th>";
 		print "</tr>";
@@ -23,7 +22,7 @@
 			print "<td>".$row->nome."</td>";
 			print "<td>".$row->idMatricula."</td>";
 			print "<td>
-					 <button onclick=\"location.href='?page=edtarAluno&idMatricula=".$row->idMatricula."';\" class='btn btn-primary'>Editar</button>
+					 <button onclick=\"location.href='?page=edtarAlunos&idMatricula=".$row->idMatricula."';\" class='btn btn-primary'>Editar</button>
 
 					 <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvarAlunos&acao=excluir&idMatricula=".$row->idMatricula."';}else{false;}\"  class='btn btn-danger'>Excluir</button>
 			       </td>";
