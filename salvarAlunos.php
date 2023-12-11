@@ -7,26 +7,21 @@
 					senha,
 					cpf,
 					telefone,
-					data_nascimento,
-					Cod_Categoria,
-					Cod_Turma                                                                                                              
+					data_nascimento                                                                                                              
 					)VALUES(
 						".$_POST["idMatricula"].",
 						'".$_POST["nome"]."',
 						'".$_POST["senha"]."',
 						'".$_POST["cpf"]."',
 						'".$_POST["telefone"]."',
-                        '".$_POST["data_nascimento"]."',
-						'".$_POST["Cod_Categoria"]."',
-						'".$_POST["Cod_Turma"]."'
+                        '".$_POST["data_nascimento"]."'
 					)";
 
-			$res = $conn->query($sql);
-			header("Location: listarAlunos.php");
+			$res = $mysqli->query($sql);
 
 			if($res==true){
 				print "<script>alert('Cadastrou com sucesso!');</script>";
-				print "<script>location.href='?page=listaAlunos';</script>";
+				print "<script>location.href='?page=listarAlunos';</script>";
 			}else{
 				print "<script>alert('Não foi possível!');</script>";
 				print "<script>location.href='?page=listarAlunos';</script>";

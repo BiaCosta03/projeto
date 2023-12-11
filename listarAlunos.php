@@ -1,47 +1,37 @@
 <?php
 	$sql = "SELECT * FROM aluno";
-	$res = $conn->query($sql);
+	$res = $mysqli->query($sql);
 	$qtd = $res->num_rows;
 
 ?>
     <div class="row">
         <div class="col-12">
             <h1>Lista de estudantes</h1>
-            <a href="cadastrarAlunos.php" class="btn btn-info my-2">Novo</a>
+            <a href="cadastrarAlunos.php" class="btn btn-info my-2">Cadastrar</a>
         </div>
-        <div class="col-12 table-responsive">
-            <table class="table table-bordered">
-                <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Matrícula</th>
-					<th>Turma</th>
-                    <th>Notas</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php foreach ($aluno as $aluno) { ?>
-                    <tr>
-                        <td><?php echo $aluno["nome"] ?></td>
-						<td><?php echo $aluno["matricula"] ?></td>
-						<td><?php echo $aluno["turma"] ?></td>
-                        <td>
-                            <a href="notasAlunos.php?id=<?php echo $aluno["idMatricula"] ?>" class="btn btn-info">
-                                Notas
-                            </a>
-                        </td>
-                        <td>
-                            <a href="editarAlunos.php?id=<?php echo $aluno["idMatricula"]; ?>" class="btn btn-warning">
-                                Editar
-                            </a>
-                        </td>
-                    </tr>
-                <?php } ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
-<?php
+		<?php
+        if($qtd > 0){
+		print "<p>Encontrou <b>$qtd</b> resultado(s).</p>";
+		print "<table class='table table-bordered table-striped table-hover'>";
+		print "<tr>";
+		print "<th>#</th>";
+		print "<th>Nome</th>";
+		print "<th>Matricula</th>";
+		print "</tr>";
+		while($row = $res->fetch_object()){
+			print "<tr>";
+			print "<td>".$row->nome."</td>";
+			print "<td>".$row->idMatricula."</td>";
+			print "<td>
+					 <button onclick=\"location.href='?page=edtarAluno&idMatricula=".$row->idMatricula."';\" class='btn btn-primary'>Editar</button>
+
+					 <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvarAlunos&acao=excluir&idMatricula=".$row->idMatricula."';}else{false;}\"  class='btn btn-danger'>Excluir</button>
+			       </td>";
+			print "</tr>";
+		}
+		print "</table>";
+	}else{
+		print "Não encontrou resultado";
+	}
+	?>
 

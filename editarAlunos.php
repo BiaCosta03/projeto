@@ -1,6 +1,6 @@
 <?php
 	$sql = "SELECT * FROM aluno WHERE idMatricula=".$_REQUEST['idMatricula'];
-	$res = $conn->query($sql);
+	$res = $mysqli->query($sql);
 	$row = $res->fetch_object();
 ?>
 <div class="row">

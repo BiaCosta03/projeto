@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label for="senha">Senha</label>
-                <input name="senha" required type="text" id="grupo" class="form-control" placeholder="senha"  maxlength="16">
+                <input name="senha" required type="password" id="grupo" class="form-control" placeholder="senha"  maxlength="16">
             </div>
             <div class="form-group">
                 <label for="cpf">cpf</label>
