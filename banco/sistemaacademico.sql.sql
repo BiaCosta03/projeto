@@ -50,7 +50,8 @@ CREATE TABLE `aluno` (
   `telefone` int(11) UNSIGNED DEFAULT NULL,
   `data_nascimento` date DEFAULT NULL,
   `Cod_Categoria` int(11) DEFAULT NULL,
-  `Cod_Turma` int(10) DEFAULT NULL
+  `Cod_Turma` int(10) DEFAULT NULL,
+  PRIMARY KEY(idMatricula)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------

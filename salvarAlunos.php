@@ -22,13 +22,14 @@
 					)";
 
 			$res = $conn->query($sql);
+			header("Location: listarAlunos.php");
 
 			if($res==true){
 				print "<script>alert('Cadastrou com sucesso!');</script>";
 				print "<script>location.href='?page=listaAlunos';</script>";
 			}else{
 				print "<script>alert('Não foi possível!');</script>";
-				print "<script>location.href='?page=listarAluos';</script>";
+				print "<script>location.href='?page=listarAlunos';</script>";
 			}
 			break;
 		

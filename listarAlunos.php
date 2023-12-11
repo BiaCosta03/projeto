@@ -1,43 +1,47 @@
-<h1>Listar Alunos</h1>
 <?php
-	include("conexao.php");
-	$sql = "SELECT * FROM alunos";
-	$res = $conn->query($sql) or die($conn->error);
+	$sql = "SELECT * FROM aluno";
+	$res = $conn->query($sql);
 	$qtd = $res->num_rows;
 
-	if($qtd > 0){
-		print "<p>Encontrou <b>$qtd</b> resultado(s)</p>";
-		print "<table class='table table-bordered table-striped table-hover'>";
-		print "<tr>";
-		print "<th>#</th>";
-		print "<th>Matrícula</th>";
-		print "<th>nome</th>";
-		print "<th>senha</th>";
-		print "<th>cpf</th>";
-		print "<th>telefone</th>";
-		print "<th>Data de Nascimento</th>";
-        print "<th>Categoria</th>";
-		print "<th>Turma</th>";
-		print "</tr>";
-		while($row = $res->fetch_object()){
-			print "<tr>";
-			print "<td>".$row->idMatrícula."</td>";
-			print "<td>".$row->nome."</td>";
-			print "<td>".$row->semha."</td>";
-			print "<td>".$row->cpf."</td>";
-			print "<td>".$row->telefone."</td>";
-			print "<td>".$row->data_nascimento."</td>";
-            print "<td>".$row->Cod_Categoria."</td>";
-			print "<td>".$row->Cod_Turma."</td>";
-			print "<td>
-					  <button onclick=\"location.href='?page=editarAluno&idMatrícula=".$row->idMatricula."';\" class='btn btn-primary'>Editar</button>
-
-					  <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvarAluno&acao=excluir&idMatricula=".$row->idMatricula."';}else{false;}\"  class='btn btn-danger'>Excluir</button>
-			       </td>";
-			print "</tr>";
-		}
-		print "</table>";
-	}else{
-		print "Não encontrou resultado";
-	}
+?>
+    <div class="row">
+        <div class="col-12">
+            <h1>Lista de estudantes</h1>
+            <a href="cadastrarAlunos.php" class="btn btn-info my-2">Novo</a>
+        </div>
+        <div class="col-12 table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Matrícula</th>
+					<th>Turma</th>
+                    <th>Notas</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($aluno as $aluno) { ?>
+                    <tr>
+                        <td><?php echo $aluno["nome"] ?></td>
+						<td><?php echo $aluno["matricula"] ?></td>
+						<td><?php echo $aluno["turma"] ?></td>
+                        <td>
+                            <a href="notasAlunos.php?id=<?php echo $aluno["idMatricula"] ?>" class="btn btn-info">
+                                Notas
+                            </a>
+                        </td>
+                        <td>
+                            <a href="editarAlunos.php?id=<?php echo $aluno["idMatricula"]; ?>" class="btn btn-warning">
+                                Editar
+                            </a>
+                        </td>
+                    </tr>
+                <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<?php
 
