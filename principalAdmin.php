@@ -50,8 +50,8 @@
             Gerenciar Turmas
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Cadastrar Turmas</a></li>
-            <li><a class="dropdown-item" href="#">Listar Turmas</a></li>
+            <li><a class="dropdown-item" href="?page=cadastrarTurmas">Cadastrar Turmas</a></li>
+            <li><a class="dropdown-item" href="?page=listarTurmas">Listar Turmas</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -84,6 +84,24 @@
                 break;
               case 'salvarAlunos':
                 include('salvarAlunos.php');
+                break;
+
+              default:
+              print"";
+            }
+
+            switch (@$_REQUEST['page']){
+              case 'cadastrarTurmas':
+                include('cadastrarTurmas.php');
+                break;
+              case 'listarTurmas':
+                include('listarTurmas.php');
+                break;
+              case 'editarTurmas':
+                include('editarTurmas.php');
+                break;
+              case 'salvarTurmas':
+                include('salvarTurmas.php');
                 break;
 
               default:
