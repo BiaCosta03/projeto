@@ -11,64 +11,38 @@
     <form action="?page=salvarAlunos" method="POST">
 	<input type="hidden" name="acao" value="cadastrar">
     <div class="mb-3">
-    <h1>Cadastro</h1>
 
-        <p>
-        <label>Matricula:</label>
-        <input type="int" name="idMatricula">
-        </p>
-
-        <p>
-        <label>Nome e Sobrenome:</label>
-        <input type="text" name="name">
-        </p>
-
-        <p>
-        <label>Senha:</label>
-        <input type="text" name="ns" maxlength="16">
-        </p>
-
-        <p>
-        <label>CPF:</label>
-        <input type="varchar" name="cpf" maxlength="15" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
-        <small>Formato: 999.999.999-99</small>
-        </p>
-
-        <p>
-        <label for="telefone">Telefone:</label>
-        <input type="tel" name="telefone" pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}">
-        <small>Formato: 11-9999-9999</small>
-        </p>
-
-        <p>
-        <label>Data de nascimento:</label>
-        <input type="date" name="date" value="1990-01-01">
-        </p>
-
-        <p>
-        <label>Categoria:</label>
-        <select name="Cod_Categoria" input type="int">
-			<option>- Escolha -</option>
-			<?php
-				$sql = "SELECT * FROM Categoria";
-				$res = $conn->query($sql);
-				if($res->num_rows > 0){
-					while($row = $res->fetch_object()){
-						print "<option value='".$row->idCategoria."'>".$row->nome."</option>";
-					}
-				}else{
-					print "<option>Não há categorias cadastradas</option>";
-				}
-            ?>
-		</select>
-        </p>
-
-        <div class="mb-3">
-		<button type="submit" class="btn btn-success">Cadastrar</button>
-	    </div>
-
-    </form>
-
-    
+    <h1>Cadastrar Alunos</h1>
+        <form action="salvarAlunos.php" method="POST">
+        <div class="form-group">
+                <label for="idMatrícula">Matrícula</label>
+                <input name="idMatricula" required type="text" id="Matricula" class="form-control" placeholder="Matricula">
+            </div>
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input name="nome" required type="text" id="nome" class="form-control" placeholder="Nome">
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input name="senha" required type="password" id="grupo" class="form-control" placeholder="senha"  maxlength="16">
+            </div>
+            <div class="form-group">
+                <label for="cpf">cpf</label>
+                <input name="cpf" required type="varchar" id="cpf" class="form-control" placeholder="cpf"  maxlength="15" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+                <small>Formato: 999.999.999-99</small>
+            </div>
+            <div class="form-group">
+                <label for="telefone">telefone</label>
+                <input name="telefone" required type="tel" id="telefone" class="form-control" placeholder="telefone" pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}">
+                <small>Formato: 11-9999-9999</small>
+            </div>
+            <div class="form-group">
+                <label for="date">Data de Nascimento</label>
+                <input name="date" required type="date" id="telefone" class="form-control" placeholder="date" value="1990-01-01">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success" type="submit">Cadastrar</button>
+            </div>
+        </form>
 </body>
 </html>

@@ -7,35 +7,29 @@
 					senha,
 					cpf,
 					telefone,
-					data_nascimento,
-					Cod_Categoria,
-					Cod_Turma                                                                                                              
+					data_nascimento                                                                                                              
 					)VALUES(
 						".$_POST["idMatricula"].",
 						'".$_POST["nome"]."',
 						'".$_POST["senha"]."',
 						'".$_POST["cpf"]."',
 						'".$_POST["telefone"]."',
-                        '".$_POST["data_nascimento"]."',
-						'".$_POST["Cod_Categoria"]."',
-						'".$_POST["Cod_Turma"]."'
+                        '".$_POST["data_nascimento"]."'
 					)";
 
-			$res = $conn->query($sql);
+			$res = $mysqli->query($sql);
 
 			if($res==true){
 				print "<script>alert('Cadastrou com sucesso!');</script>";
-				print "<script>location.href='?page=listaAlunos';</script>";
+				print "<script>location.href='?page=listarAlunos';</script>";
 			}else{
 				print "<script>alert('Não foi possível!');</script>";
-				print "<script>location.href='?page=listarAluos';</script>";
+				print "<script>location.href='?page=listarAlunos';</script>";
 			}
 			break;
 		
 		case 'editar':
 			$sql = "UPDATE modelo SET
-						Cod_Categoria='".$_POST['Cod_Categoria']."',
-                        Cod_Turma='".$_POST['Cod_Turma']."',
 						nome='".$_POST['nome']."',
 						senha='".$_POST['senha']."',
 						cpf='".$_POST['cpf']."',
@@ -48,10 +42,10 @@
 
 			if($res==true){
 				print "<script>alert('Editou com sucesso!');</script>";
-				print "<script>location.href='?page=modelo-listar';</script>";
+				print "<script>location.href='?page=listarAluno';</script>";
 			}else{
 				print "<script>alert('Não foi possível!');</script>";
-				print "<script>location.href='?page=modelo-listar';</script>";
+				print "<script>location.href='?page=listarAluno';</script>";
 			}
 			break;
 
@@ -62,10 +56,10 @@
 
 			if($res==true){
 				print "<script>alert('Excluiu com sucesso!');</script>";
-				print "<script>location.href='?page=modelo-listar';</script>";
+				print "<script>location.href='?page=listarAlunos';</script>";
 			}else{
 				print "<script>alert('Não foi possível!');</script>";
-				print "<script>location.href='?page=modelo-listar';</script>";
+				print "<script>location.href='?page=listarAlunos';</script>";
 			}
 			break;
 	}
