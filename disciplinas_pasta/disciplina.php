@@ -33,13 +33,13 @@
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="alunos.php">Alunos</a>
+                            <a class="nav-link" href="projeto/projeto/alunos.php">Alunos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="boletim.php">Boletins</a>
+                            <a class="nav-link" href="boletins_pasta/boletim.php">Boletins</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="turmas.php">Turmas</a>
+                            <a class="nav-link" href="projeto/turmas.php">Turmas</a>
                         </li>
                     </ul>
                 </nav>
@@ -70,21 +70,21 @@
                 </tr>
                 <?php
                 //se foi escolhida alguma disciplina para remoção aparecerá uma janela modal de confirmação de exclusão
-                if(isset($_POST['remover'])){
-                    $codigo = $_POST['remover'];
+                if(isset($_GET['remover'])){
+                    $codigo = $_GET['remover'];
                     $d->modalExcluir($codigo);
                 }
             ?>
                 <?php
 
-                    if(isset($_POST['disciplina'])){//se os filtros de busca foram setados os registros serão filtrados
+                    if(isset($_GET['disciplina'])){//se os filtros de busca foram setados os registros serão filtrados
 
-                        $nome = $_POST['disciplina'];
+                        $nome = $_GET['disciplina'];
                         $registros = $d->exibir(0, $nome, null, 0);
 
                     }else{//senão todos os registros serão exibidos
 
-                        $registros = $d->exibir(0, null, null, 0);
+                        $registros = $d->exibir(0, $nome, null, 0);
 
                     }
 
