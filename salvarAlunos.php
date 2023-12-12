@@ -30,8 +30,6 @@
 		
 		case 'editar':
 			$sql = "UPDATE modelo SET
-						Cod_Categoria='".$_POST['Cod_Categoria']."',
-                        Cod_Turma='".$_POST['Cod_Turma']."',
 						nome='".$_POST['nome']."',
 						senha='".$_POST['senha']."',
 						cpf='".$_POST['cpf']."',
@@ -44,10 +42,10 @@
 
 			if($res==true){
 				print "<script>alert('Editou com sucesso!');</script>";
-				print "<script>location.href='?page=modelo-listar';</script>";
+				print "<script>location.href='?page=listarAluno';</script>";
 			}else{
 				print "<script>alert('Não foi possível!');</script>";
-				print "<script>location.href='?page=modelo-listar';</script>";
+				print "<script>location.href='?page=listarAluno';</script>";
 			}
 			break;
 
@@ -58,10 +56,10 @@
 
 			if($res==true){
 				print "<script>alert('Excluiu com sucesso!');</script>";
-				print "<script>location.href='?page=modelo-listar';</script>";
+				print "<script>location.href='?page=listarAlunos';</script>";
 			}else{
 				print "<script>alert('Não foi possível!');</script>";
-				print "<script>location.href='?page=modelo-listar';</script>";
+				print "<script>location.href='?page=listarAlunos';</script>";
 			}
 			break;
 	}
