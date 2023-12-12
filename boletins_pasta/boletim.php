@@ -105,16 +105,16 @@
                 <div id="div_tabela">
                 <table class="table table-striped" id="table_boletins">
                 <tr>
-                    <th><a href="turmas.php">Matrícula</a></th>
-                    <th><a href="turmas.php">Aluno</a></th>
-                    <th><a href="turmas.php">Disciplina</a></th>
-                    <th><a href="boletim.php">Nota 1</a></th>
-                    <th><a href="boletim.php">Nota 2</a></th>
-                    <th><a href="boletim.php">Nota 3</a></th>
-                    <th><a href="boletim.php">Nota 4</a></th>
-                    <th><a href="boletim.php">Média</a></th>
-                    <th><a href="boletim.php">Situação</a></th>
-                    <th><a href="principalAdmin.php">Ações</a></th>
+                    <th>Matrícula</a></th>
+                    <th>Aluno</a></th>
+                    <th>Disciplina</a></th>
+                    <th>Nota 1</a></th>
+                    <th>Nota 2</a></th>
+                    <th>Nota 3</a></th>
+                    <th>Nota 4</a></th>
+                    <th>Média</a></th>
+                    <th>Situação</a></th>
+                    <th>Ações</a></th>
                 </tr>
                 <?php
                     

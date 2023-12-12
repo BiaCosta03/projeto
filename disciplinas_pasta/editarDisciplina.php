@@ -16,18 +16,18 @@
     </style>
 </head>
 <body>
-    <form action="disciplinas.php" method="POST">
+    <form action="disciplina.php" method="POST">
         <h1>Editar</h1>
         <label for="">Disciplina:</label>
         <input type="text" name="Disciplina">
         <br>
-        <label for="">Código da Disciplina</label>
+        <label for="">Código da Disciplina:</label>
         <input type="number" name="CodDisciplina">
         <br>
-        <label for="">Professor</label>
+        <label for="">Professor:</label>
         <input type="text" name="name">
         <br>
-        <a href="disciplinas.php"><button>Editar</button></a>
+        <a href="disciplina.php"><button>Editar</button></a>
     </form>
 </body>
 </html>
