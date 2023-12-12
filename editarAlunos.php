@@ -6,7 +6,7 @@
 <div class="row">
     <div class="col-12">
         <h1>Editar estudante</h1>
-        <form action="atualizar_alunos.php" method="POST">
+        <form action="editarAlunos.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $_GET["idMatricula"] ?>">
             <div class="form-group">
                 <label for="nome">Nome</label>
