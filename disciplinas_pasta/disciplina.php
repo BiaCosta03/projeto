@@ -16,32 +16,24 @@
             <!--importando javascript do bootstrap-->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-            
+            <style type="text/css">
+                .btn btn-primary{
+                color:white;
+                }
+            </style>
         </head>
         <body>
-
-            <!--corpo da página-->
-            
-            <?php
-                //se foi escolhida alguma disciplina para remoção aparecerá uma janela modal de confirmação de exclusão
-                if(isset($_POST['remover'])){
-                    $codigo = $_POST['remover'];
-                    $d->modalExcluir($codigo);
-                }
-            ?>
-
-
             <div class="container" id="disciplinas">
                 <nav class="navbar navbar-light">
                     <h1>Disciplinas</h1>
-                    <a class="navbar-brand" href="inserir_disciplina.php">
+                    <a class="navbar-brand" href="inserir_disciplinas.php">
                         <button class="btn btn-primary">Inserir</button>
                     </a>
                 </nav>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="alinos.php">Alunos</a>
+                            <a class="nav-link" href="alunos.php">Alunos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="boletim.php">Boletins</a>
@@ -68,14 +60,21 @@
                 <div id="div_tabela">
                 <table class="table table-striped" id="table_disciplinas">
                 <tr>
-                    <th><a href="turmas.php">Código</a></th>
-                    <th><a href="turmas.php">Disciplinas</a></th>
-                    <th><a href="turmas.php">Alunos</a></th>
-                    <th><a href="turmas.php">Aprovados</a></th>
-                    <th><a href="turmas.php">Reprovados</a></th>
-                    <th><a href="turmas.php">Recuperação</a></th>
-                    <th><a href="turmas.php">Ações</a></th>
+                    <th>Código</th>
+                    <th>Disciplinas</th>
+                    <th>Alunos</th>
+                    <th>Aprovados</th>
+                    <th>Reprovados</th>
+                    <th>Recuperação</th>
+                    <th>Ações</th>
                 </tr>
+                <?php
+                //se foi escolhida alguma disciplina para remoção aparecerá uma janela modal de confirmação de exclusão
+                if(isset($_POST['remover'])){
+                    $codigo = $_POST['remover'];
+                    $d->modalExcluir($codigo);
+                }
+            ?>
                 <?php
 
                     if(isset($_POST['disciplina'])){//se os filtros de busca foram setados os registros serão filtrados
@@ -116,10 +115,11 @@
                     }
 
                 ?>
+               
                                
                 </table>
                 </div>
             </div>
-    
+            <a href="editarDisciplina.php"><button>Editar</button></a> <a href="excluirDisciplina.php"><button>Excluir</button></a>
         </body>
     </html>
