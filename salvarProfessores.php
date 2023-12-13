@@ -1,30 +1,28 @@
 <?php
 	switch ($_REQUEST['acao']) {
 		case 'cadastrar':
-			$sql = "INSERT INTO aluno (
-					idAluno,
+			$sql = "INSERT INTO professores (
+					idProfessores,
 					nome,
 					senha,
 					cpf,
-					telefone,
-					data_nascimento                                                                                                              
+					telefone,                                                                                                            
 					)VALUES(
-						'".$_POST["idAluno"]."',
+						'".$_POST["idProfessores"]."',
 						'".$_POST["nome"]."',
 						'".$_POST["senha"]."',
 						'".$_POST["cpf"]."',
-						'".$_POST["telefone"]."',
-                        '".$_POST["data_nascimento"]."'
+						'".$_POST["telefone"]."'
 					)";
 
 			$res = $mysqli->query($sql);
 
 			if($res==true){
 				print "<script>alert('Cadastrou com sucesso!');</script>";
-				print "<script>location.href='?page=listarAlunos';</script>";
+				print "<script>location.href='?page=listarProfessores';</script>";
 			}else{
 				print "<script>alert('Não foi possível!');</script>";
-				print "<script>location.href='?page=listarAlunos';</script>";
+				print "<script>location.href='?page=listarProfessores';</script>";
 			}
 			break;
 		
@@ -33,33 +31,32 @@
 						nome='".$_POST['nome']."',
 						senha='".$_POST['senha']."',
 						cpf='".$_POST['cpf']."',
-						telefone='".$_POST['telefone']."',
-                        data_nascimento='".$_POST['data_nascimento']."'
+						telefone='".$_POST['telefone']."'
 					WHERE
-						idAluno=".$_POST['idAluno'];
+						idAluno=".$_POST['idProfessores'];
 
 			$res = $conn->query($sql);
 
 			if($res==true){
 				print "<script>alert('Editou com sucesso!');</script>";
-				print "<script>location.href='?page=listarAluno';</script>";
+				print "<script>location.href='?page=listarProfessores';</script>";
 			}else{
 				print "<script>alert('Não foi possível!');</script>";
-				print "<script>location.href='?page=listarAluno';</script>";
+				print "<script>location.href='?page=listarProfessores';</script>";
 			}
 			break;
 
 		case 'excluir':
-			$sql = "DELETE FROM aluno WHERE idAluno=".$_REQUEST['idAluno'];
+			$sql = "DELETE FROM professores WHERE idProfessores=".$_REQUEST['idProfessores'];
 
 			$res = $conn->query($sql);
 
 			if($res==true){
 				print "<script>alert('Excluiu com sucesso!');</script>";
-				print "<script>location.href='?page=listarAlunos';</script>";
+				print "<script>location.href='?page=listarProfessores';</script>";
 			}else{
 				print "<script>alert('Não foi possível!');</script>";
-				print "<script>location.href='?page=listarAlunos';</script>";
+				print "<script>location.href='?page=listarProfessores';</script>";
 			}
 			break;
 	}
