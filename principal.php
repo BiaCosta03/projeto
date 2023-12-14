@@ -51,6 +51,8 @@ body{
     background-position: center;
     color: orange;
     background-color: #cccccc;
+   /* -webkit-text-stroke-witdh:1px;
+    -webkit-text-stroke-color:#000;*/
     
  }
 
@@ -120,7 +122,7 @@ body{
                 </p>
 
                     <div class="botaoform">
-                        <a href="adm.php">Login</a>
+                        <a href="principalAdmin.php">Login</a>
                     </div>
                 </div>
             </div>
