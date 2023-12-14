@@ -9,7 +9,7 @@
     <title>SIGAP</title>
     <style>
 body{
-    background-color: #2e8b57;
+    background-color: #91DF76;
     width: 100%;
     height: 580px;
  }
@@ -76,7 +76,7 @@ body{
  
  .botaoform{
     color: white;
-    background-color: #2e8b57;
+    background-color: #91DF76;
     border-radius: 5px;
     box-shadow: 5px 5px 5px darkgreen;
     text-align: center;
@@ -85,6 +85,7 @@ body{
     margin-right: 35%;
     font-weight: bold;
     width: fit-content;
+    text-decoration: none;
  }
 
     </style>
