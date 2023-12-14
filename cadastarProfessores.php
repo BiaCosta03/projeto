@@ -8,15 +8,15 @@
     <title>Cadastro</title>
 </head>
 <body>
-    <form action="?page=salvarAlunos" method="POST">
+    <form action="?page=salvarProfessores" method="POST">
 	<input type="hidden" name="acao" value="cadastrar">
     <div class="mb-3">
 
-    <h1>Cadastrar Alunos</h1>
-        <form action="salvarAlunos.php" method="POST">
+    <h1>Cadastrar Professores</h1>
+        <form action="salvarProfessores.php" method="POST">
             <div class="form-group">
                 <label for="nome">Nome</label>
-                <input name="nome" required type="text" id="nome" class="form-control" placeholder="nome">
+                <input name="nome" required type="text" id="nome" class="form-control" placeholder="Nome">
             </div>
             <div class="form-group">
                 <label for="senha">Senha</label>
@@ -31,10 +31,6 @@
                 <label for="telefone">telefone</label>
                 <input name="telefone" required type="tel" id="telefone" class="form-control" placeholder="telefone" pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}">
                 <small>Formato: 11-9999-9999</small>
-            </div>
-            <div class="form-group">
-                <label for="date">Data de Nascimento</label>
-                <input name="data" required type="date" id="data" class="form-control" placeholder="date" value="1990-01-01">
             </div>
             <div class="form-group">
                 <button class="btn btn-success" type="submit">Cadastrar</button>

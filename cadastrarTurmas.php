@@ -12,7 +12,7 @@
 	<input type="hidden" name="acao" value="cadastrar">
     <div class="mb-3">
 
-    <h1>Cadastrar Alunos</h1>
+    <h1>Cadastrar Turmas</h1>
         <form action="salvarTurmas.php" method="POST">
         <div class="form-group">
                 <label for="idTurmas">idTurmas</label>
@@ -25,10 +25,6 @@
             <div class="form-group">
                 <label for="idTurnos">Turno</label>
                 <input name="idTurno" required type="text" id="turno" class="form-control" placeholder="turno">
-            </div>
-            <div class="form-group">
-                <label for="alunosMatriculados">Alunos Matriculados</label>
-                <input name="alunosMatriculados" required type="int" id="alunosMatriculados" class="form-control" placeholder="alunosMatriculados">
             </div>
             <div class="form-group">
                 <button class="btn btn-success" type="submit">Cadastrar</button>

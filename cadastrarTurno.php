@@ -16,7 +16,7 @@
         <form action="salvarTurnos.php" method="POST">
         <div class="form-group">
                 <label for="idTurnos">idTurnos</label>
-                <input name="idTurnoss" required type="text" id="Turnos" class="form-control" placeholder="Turnos">
+                <input name="idTurnos" required type="text" id="Turnos" class="form-control" placeholder="Turnos">
             </div>
             <div class="form-group">
                 <label for="nome">Nome</label>

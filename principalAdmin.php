@@ -25,7 +25,7 @@
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="page=principalAdmin">Home</a>
         </li>
           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -41,8 +41,8 @@
             Gerenciar Professores
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Cadastrar Professores</a></li>
-            <li><a class="dropdown-item" href="#">Listar Professores</a></li>
+            <li><a class="dropdown-item" href="page=cadastrarProfessores">Cadastrar Professores</a></li>
+            <li><a class="dropdown-item" href="page=listarProfessores">Listar Professores</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -59,8 +59,17 @@
             Gerenciar Disciplinas
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Cadastrar Disciplinas</a></li>
+            <li><a class="dropdown-item" href="page=cadastrarDisciplinas">Cadastrar Disciplinas</a></li>
             <li><a class="dropdown-item" href="#">Listar Disciplinas</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Gerenciar Turnos
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="page=cadastrarTurno">Cadastrar Turnos</a></li>
+            <li><a class="dropdown-item" href="page=listarTurnos">Listar Turnos</a></li>
           </ul>
         </li>
     </nav>
@@ -102,6 +111,42 @@
                 break;
               case 'salvarTurmas':
                 include('salvarTurmas.php');
+                break;
+
+              default:
+              print"";
+            }
+
+            switch (@$_REQUEST['page']){
+              case 'cadastrarTurnos':
+                include('cadastrarTurnos.php');
+                break;
+              case 'listarTurnos':
+                include('listarTurnos.php');
+                break;
+              case 'editarTurnos':
+                include('editarTurnos.php');
+                break;
+              case 'salvarTurnos':
+                include('salvarTurnos.php');
+                break;
+
+              default:
+              print"";
+            }
+
+            switch (@$_REQUEST['page']){
+              case 'cadastrarProfessores':
+                include('cadastrarProfessores.php');
+                break;
+              case 'listarProfessores':
+                include('listarProfessores.php');
+                break;
+              case 'editarProfessoress':
+                include('editarProfessores.php');
+                break;
+              case 'salvarProfessores':
+                include('salvarProfessores.php');
                 break;
 
               default:

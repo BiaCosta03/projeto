@@ -24,3 +24,41 @@
     $m->getMensagem();//exibindo a mensagem somente se existir
     
 ?>
+
+
+
+<?php
+            
+            //mesmo esquema usado na inserção de um aluno
+            if(isset($_POST['nome'])){
+                $nome = $_POST['nome'];
+                
+                include_once('disciplinas_pasta/inserir_disciplinas.php');
+                include_once('projeto/mensagem.php');
+                
+                $m = new Mensagem;
+                $d = new Disciplina;
+                
+                if(!empty($nome)){
+                    
+                    $msg = $d->valida_disciplina($nome);
+                    
+                    if($msg == "Pode inserir a disciplina!"){
+                    
+                        $d->inserir($nome);
+                        $m->setMensagem("Disciplina inserida com sucesso!");
+                        header("Location: disciplinas.php");
+                    
+                    }else{
+                        
+                        $m->alert($msg);
+                        
+                    }
+                }else{
+                    
+                    $m->alert("Preencha o nome!");
+                    
+                }
+            }
+        
+        ?>

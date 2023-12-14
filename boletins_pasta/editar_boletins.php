@@ -13,7 +13,7 @@ include_once('boletins_pasta/boletim.php');
                     $nota3 = $_POST['nota3'];
                     $nota4 = $_POST['nota4'];
                     
-                    include_once('class/Mensagem.php');
+                    include_once('class/mensagem.php');
                     
                     $m = new Mensagem;
                     

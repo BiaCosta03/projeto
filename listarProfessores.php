@@ -1,5 +1,5 @@
 <?php
-	$sql = "SELECT * FROM aluno";
+	$sql = "SELECT * FROM professores";
 	$res = $mysqli->query($sql);
 	$qtd = $res->num_rows;
 
@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-12">
             <h1>Lista de estudantes</h1>
-            <a href="cadastrarAlunos.php" class="btn btn-info my-2">Cadastrar</a>
+            <a href="cadastrarProfessores.php" class="btn btn-info my-2">Cadastrar</a>
         </div>
 		<?php
         if($qtd > 0){
@@ -20,11 +20,11 @@
 		while($row = $res->fetch_object()){
 			print "<tr>";
 			print "<td>".$row->nome."</td>";
-			print "<td>".$row->idAluno."</td>";
+			print "<td>".$row->idProfessores."</td>";
 			print "<td>
-					 <button onclick=\"location.href='?page=edtarAlunos&idAluno=".$row->idAluno."';\" class='btn btn-primary'>Editar</button>
+					 <button onclick=\"location.href='?page=edtarProfessores&idProfessores=".$row->idProfessores."';\" class='btn btn-primary'>Editar</button>
 
-					 <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvarAlunos&acao=excluir&idAluno=".$row->idAluno."';}else{false;}\"  class='btn btn-danger'>Excluir</button>
+					 <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvarProfessores&acao=excluir&idProfessores=".$row->idProfessores."';}else{false;}\"  class='btn btn-danger'>Excluir</button>
 			       </td>";
 			print "</tr>";
 		}
@@ -33,4 +33,3 @@
 		print "Não encontrou resultado";
 	}
 	?>
-
