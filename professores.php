@@ -6,7 +6,7 @@
     <title>Sistema de Professores</title>
     <style>
         body {
-        background-image: url(img/icon.png);
+        background-image: url(img/SIGAP.png);
     }
 
     h1 {

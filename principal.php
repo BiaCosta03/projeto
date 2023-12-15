@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,7 +19,7 @@ body{
  }
  
 .secao{
-    margin-top: 0;
+    margin-top: auto;
     width: 100%;
     height: 580px;
     display: flex;
@@ -27,7 +31,7 @@ body{
  .container{
     width: 800px;
     height: 500px;
-    border: 1px solid black;
+    border: 1px  #7FFF00;
     border-radius: 5px;
     /*background-color: rgba(12, 46, 12, 0.4);*/
     display: flex;
@@ -39,7 +43,7 @@ body{
     width: 50%;
     height: 100%;
     text-align: center;
-    border: 1px solid black;
+    border: 1px solid #006400;
  }
 
  .informacoes{
