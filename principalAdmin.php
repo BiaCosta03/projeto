@@ -21,12 +21,26 @@
         margin-left: 25px;
         width: 100%;
       }
+      header{
+        width: 1220px;
+        max-width: 200px;
+        max-height:150px;
+        top: 0px;
+        right: 0px;
+        left: 0px;
+        margin: 0px auto;
+      }
     </style>
    
 </head>
 <body>
     <div class="container">
         <div class="row">
+          <header>
+            <div id="SIGAP.png">
+                <img src="img/SIGAP.png" width="280" height="270">
+            </div>
+          </header>
             <div class="col-md-12">
                 <h1 class="text-center">SIGAP</h1>
             </div>

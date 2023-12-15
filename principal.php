@@ -35,13 +35,11 @@ body{
  
  .informacoes, .login{
     display: grid;
-    
     place-items: center;
     width: 50%;
     height: 100%;
     text-align: center;
     border: 1px solid black;
-
  }
 
  .informacoes{
@@ -51,8 +49,7 @@ body{
     color: orange;
     background-color: #cccccc;
    /* -webkit-text-stroke-witdh:1px;
-    -webkit-text-stroke-color:#000;*/
-    
+    -webkit-text-stroke-color:#000;*/    
  }
 
  .continformacoes{
