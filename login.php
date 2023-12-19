@@ -7,13 +7,13 @@ $usuario="";
 $matricula=" ";
 $senha=" ";
 
-$_SESSION['matricula']="";
+$_SESSION['matrícula']="";
 $_SESSION['senha']="";
 
 if(isset($_POST['logar'])){
-   if(isset($_POST['matricula']) && isset($_POST['senha'])){
+   if(isset($_POST['matrícula']) && isset($_POST['senha'])){
       $_SESSION['matricula'] = array(
-           'matricula' => $_POST['matricula'],
+           'matricula' => $_POST['matrícula'],
            'senha' => $_POST['senha']
       );
 
@@ -42,7 +42,7 @@ if(isset($_POST['logar'])){
     <h1>Login</h1>
          <p>
             <label>Matrícula</label>
-            <input type="text" name="matricula" 
+            <input type="text" name="matrícula" 
             class= "form-control">
          </p>
 
