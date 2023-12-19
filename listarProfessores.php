@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-12">
             <h1>Lista de estudantes</h1>
-            <a href="cadastrarProfessores.php" class="btn btn-info my-2">Cadastrar</a>
+            <a class="btn btn-info my-2">Cadastrar</a>
         </div>
 		<?php
         if($qtd > 0){
