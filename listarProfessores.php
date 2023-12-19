@@ -22,7 +22,7 @@
 			print "<td>".$row->nome."</td>";
 			print "<td>".$row->idProfessores."</td>";
 			print "<td>
-					 <button onclick=\"location.href='?page=edtarProfessores&idProfessores=".$row->idProfessores."';\" class='btn btn-primary'>Editar</button>
+					 <button onclick=\"location.href='?page=editarProfessores&idProfessores=".$row->idProfessores."';\" class='btn btn-primary'>Editar</button>
 
 					 <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvarProfessores&acao=excluir&idProfessores=".$row->idProfessores."';}else{false;}\"  class='btn btn-danger'>Excluir</button>
 			       </td>";
