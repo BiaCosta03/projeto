@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+   
     <style>
       body{
         background-color: #91DF76;
@@ -31,16 +32,10 @@
         margin: 0px auto;
       }
     </style>
-   
 </head>
 <body>
     <div class="container">
         <div class="row">
-          <header>
-            <div id="SIGAP.png">
-                <img src="img/SIGAP.png" width="280" height="270">
-            </div>
-          </header>
             <div class="col-md-12">
                 <h1 class="text-center">SIGAP</h1>
             </div>
@@ -54,7 +49,7 @@
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="page=principalAdmin">Home</a>
+          <a class="nav-link active" aria-current="page" href="principalAdmin.php">Home</a>
         </li>
           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -70,8 +65,8 @@
             Gerenciar Professores
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="page=cadastrarProfessores">Cadastrar Professores</a></li>
-            <li><a class="dropdown-item" href="page=listarProfessores">Listar Professores</a></li>
+            <li><a class="dropdown-item" href="?page=cadastrarProfessores">Cadastrar Professores</a></li>
+            <li><a class="dropdown-item" href="?page=listarProfessores">Listar Professores</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -88,7 +83,7 @@
             Gerenciar Disciplinas
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="page=cadastrarDisciplinas">Cadastrar Disciplinas</a></li>
+            <li><a class="dropdown-item" href="?page=cadastrarDisciplinas">Cadastrar Disciplinas</a></li>
             <li><a class="dropdown-item" href="#">Listar Disciplinas</a></li>
           </ul>
         </li>
@@ -97,9 +92,13 @@
             Gerenciar Turnos
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="page=cadastrarTurno">Cadastrar Turnos</a></li>
-            <li><a class="dropdown-item" href="page=listarTurnos">Listar Turnos</a></li>
+            <li><a class="dropdown-item" href="?page=cadastrarTurno">Cadastrar Turnos</a></li>
+            <li><a class="dropdown-item" href="?page=listarTurnos">Listar Turnos</a></li>
           </ul>
+        </li>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="sair.php">Sair</a>
         </li>
     </nav>
     <div class="container mt-3">
@@ -111,6 +110,7 @@
 
             //include das páginas
             switch (@$_REQUEST['page']){
+              //Alunos
               case 'cadastrarAlunos':
                 include('cadastrarAlunos.php');
                 break;
@@ -124,11 +124,21 @@
                 include('salvarAlunos.php');
                 break;
 
-              default:
-              print"";
-            }
+                //Professoresofessores
+              case 'cadastrarProfessores':
+                include('cadastrarProfessores.php');
+                break;
+              case 'listarProfessores':
+                include('listarProfessores.php');
+                break;
+              case 'editarProfessoress':
+                include('editarProfessores.php');
+                break;
+              case 'salvarProfessores':
+                include('salvarProfessores.php');
+                break;
 
-            switch (@$_REQUEST['page']){
+                //Turmas
               case 'cadastrarTurmas':
                 include('cadastrarTurmas.php');
                 break;
@@ -142,13 +152,9 @@
                 include('salvarTurmas.php');
                 break;
 
-              default:
-              print"";
-            }
-
-            switch (@$_REQUEST['page']){
-              case 'cadastrarTurnos':
-                include('cadastrarTurnos.php');
+                //Turnos
+              case 'cadastrarTurno':
+                include('cadastrarTurno.php');
                 break;
               case 'listarTurnos':
                 include('listarTurnos.php');
@@ -158,24 +164,6 @@
                 break;
               case 'salvarTurnos':
                 include('salvarTurnos.php');
-                break;
-
-              default:
-              print"";
-            }
-
-            switch (@$_REQUEST['page']){
-              case 'cadastrarProfessores':
-                include('cadastrarProfessores.php');
-                break;
-              case 'listarProfessores':
-                include('listarProfessores.php');
-                break;
-              case 'editarProfessoress':
-                include('editarProfessores.php');
-                break;
-              case 'salvarProfessores':
-                include('salvarProfessores.php');
                 break;
 
               default:
