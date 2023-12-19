@@ -70,6 +70,11 @@ while ($result = mysql_fetch_array($select)){
     $st = $result['$site'];
     $avs = $result['$avisos'];
 
+    //sujestão
+    //$sql = "SELECT * FROM recados WHERE id=".$_REQUEST['id'];
+    //$res = $mysqli->query($sql);
+    //$row = $res->fetch_object();
+    
 
 ?>
 <div class="recados">
