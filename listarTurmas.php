@@ -28,7 +28,7 @@
             print "<td>".$row->vagas."</td>";
             print "<td>".$row->alunosMatriculados."</td>";
 			print "<td>
-					 <button onclick=\"location.href='?page=edtarTurmas&idTurmas=".$row->idTurmas."';\" class='btn btn-primary'>Editar</button>
+					 <button onclick=\"location.href='?page=editarTurmas&idTurmas=".$row->idTurmas."';\" class='btn btn-primary'>Editar</button>
 
 					 <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvarTurmas&acao=excluir&idTurmas=".$row->idTurmas."';}else{false;}\"  class='btn btn-danger'>Excluir</button>
 			       </td>";
