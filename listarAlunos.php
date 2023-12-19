@@ -15,14 +15,14 @@
 		print "<table class='table table-bordered table-striped table-hover'>";
 		print "<tr>";
 		print "<th>Nome</th>";
-		print "<th>Matricula</th>";
+		print "<th>Matrícula</th>";
 		print "</tr>";
 		while($row = $res->fetch_object()){
 			print "<tr>";
 			print "<td>".$row->nome."</td>";
-			print "<td>".$row->idAluno."</td>";
+			print "<td>".$row->matrícula."</td>";
 			print "<td>
-					 <button onclick=\"location.href='?page=edtarAlunos&idAluno=".$row->idAluno."';\" class='btn btn-primary'>Editar</button>
+					 <button onclick=\"location.href='?page=editarAlunos&idAluno=".$row->idAluno."';\" class='btn btn-primary'>Editar</button>
 
 					 <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvarAlunos&acao=excluir&idAluno=".$row->idAluno."';}else{false;}\"  class='btn btn-danger'>Excluir</button>
 			       </td>";
@@ -33,4 +33,3 @@
 		print "Não encontrou resultado";
 	}
 	?>
-
