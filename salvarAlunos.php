@@ -52,7 +52,7 @@
 		case 'excluir':
 			$sql = "DELETE FROM aluno WHERE idAluno=".$_REQUEST['idAluno'];
 
-			$res = $conn->query($sql);
+			$res = $mysqli->query($sql);
 
 			if($res==true){
 				print "<script>alert('Excluiu com sucesso!');</script>";
