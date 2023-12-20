@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$database = "sistemaacademico";
+$database = "sistemaacademico2";
 $username = "root";
 $password = "";
 

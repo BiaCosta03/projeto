@@ -33,6 +33,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
    
     <title>Cadastro</title>
+    <style>
+        body{
+            background-color: #91DF76;
+        }
+    </style>
 </head>
 <body>
     <form action="?page=salvarAlunos" method="POST">
