@@ -51,13 +51,13 @@
           <a class="nav-link active" aria-current="page" href="principalAluno.php">Home</a>
         </li>
           <li class="nav-item dropdown">
-          <a class="nav-link active" href="?page=boletim" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Boletim
+          <a class="nav-link active" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Gerenciar Boletins
           </a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link active" href="?page=infoUsuario" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Imformações Pessoais
+          <a class="nav-link active" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Imformações pessoais
           </a>
         </li>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -74,13 +74,9 @@
 
             //include das páginas
             switch (@$_REQUEST['page']){
-              case 'boletim':
-                include('boletim.php');
+              case '':
+                include('');
                 break;
-
-                case 'infoUsuario':
-                  include('infoUsuario.php');
-                  break;
 
               default:
               print"";
