@@ -72,15 +72,8 @@
             //conexão com o banco
             include('conexao.php');
 
-            //include das páginas
-            switch (@$_REQUEST['page']){
-              case '':
-                include('');
-                break;
-
-              default:
-              print"";
-            }
+            
+            
 
           ?>
         </div>
