@@ -1,5 +1,5 @@
 <?php
-	switch ($_REQUEST['acao']) {
+	switch ($_REQUEST ['acao']) {
 		case 'cadastrar':
 			$sql = "INSERT INTO aluno (
 					idAluno,
@@ -55,6 +55,7 @@
 			$res = $mysqli->query($sql);
 
 			if($res==true){
+
 				print "<script>alert('Excluiu com sucesso!');</script>";
 				print "<script>location.href='?page=listarAlunos';</script>";
 			}else{
@@ -62,4 +63,4 @@
 				print "<script>location.href='?page=listarAlunos';</script>";
 			}
 			break;
-	}
+		}
