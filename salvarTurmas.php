@@ -27,15 +27,13 @@
 			break;
 		
 		case 'editar':
-			$sql = "UPDATE modelo SET
+			$sql = "UPDATE professores SET
 						nome='".$_POST['nome']."',
-                        turno='".$_POST['turno']."',
-						vagas='".$_POST['vagas']."',
-						alunosMatriculados='".$_POST['AlunosMatriculados']."'
-					WHERE
+                        turno='".$_POST['turno']."'
+						WHERE
 						idTurmas=".$_POST['idTurmas'];
 
-			$res = $conn->query($sql);
+			$res = $mysqli->query($sql);
 
 			if($res==true){
 				print "<script>alert('Editou com sucesso!');</script>";
@@ -49,7 +47,7 @@
 		case 'excluir':
 			$sql = "DELETE FROM turmas WHERE idTurmas=".$_REQUEST['idTurmas'];
 
-			$res = $conn->query($sql);
+			$res = $mysqli->query($sql);
 
 			if($res==true){
 				print "<script>alert('Excluiu com sucesso!');</script>";

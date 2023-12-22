@@ -45,10 +45,10 @@
 
 			if($res==true){
 				print "<script>alert('Editou com sucesso!');</script>";
-				print "<script>location.href='?page=listarAluno';</script>";
+				print "<script>location.href='?page=listarAlunos';</script>";
 			}else{
 				print "<script>alert('Não foi possível!');</script>";
-				print "<script>location.href='?page=listarAluno';</script>";
+				print "<script>location.href='?page=listarAlunos';</script>";
 			}
 			break;
 

@@ -131,7 +131,7 @@
               case 'listarProfessores':
                 include('listarProfessores.php');
                 break;
-              case 'editarProfessoress':
+              case 'editarProfessores':
                 include('editarProfessores.php');
                 break;
               case 'salvarProfessores':

@@ -1,7 +1,7 @@
 <?php
 	switch ($_REQUEST['acao']) {
 		case 'cadastrar':
-			$sql = "INSERT INTO Turnos (
+			$sql = "INSERT INTO turnos (
 					idTurnos,
 					nome,                                                                                                        
 					)VALUES(
@@ -21,12 +21,12 @@
 			break;
 		
 		case 'editar':
-			$sql = "UPDATE modelo SET
+			$sql = "UPDATE turnos SET
 						nome='".$_POST['nome']."',
 					WHERE
 						idTurnos=".$_POST['idTurnos'];
 
-			$res = $conn->query($sql);
+			$res = $mysqli->query($sql);
 
 			if($res==true){
 				print "<script>alert('Editou com sucesso!');</script>";

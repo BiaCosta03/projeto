@@ -6,7 +6,7 @@
 ?>
     <div class="row">
         <div class="col-12">
-            <h1>Lista de estudantes</h1>
+            <h1>Lista de Professores</h1>
         </div>
 		<?php
         if($qtd > 0){
@@ -14,12 +14,12 @@
 		print "<table class='table table-bordered table-striped table-hover'>";
 		print "<tr>";
 		print "<th>Nome</th>";
-		print "<th>Matricula</th>";
+		print "<th>Matrícula</th>";
 		print "</tr>";
 		while($row = $res->fetch_object()){
 			print "<tr>";
 			print "<td>".$row->nome."</td>";
-			print "<td>".$row->idProfessores."</td>";
+			print "<td>".$row->matrícula."</td>";
 			print "<td>
 					 <button onclick=\"location.href='?page=editarProfessores&idProfessores=".$row->idProfessores."';\" class='btn btn-primary'>Editar</button>
 

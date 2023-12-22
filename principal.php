@@ -1,7 +1,3 @@
-<?php
-
-
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -109,7 +105,7 @@ body{
             <div class="login">
             
                 <div class="formlogin">
-                <form action="testlogin.php" method="POST">
+                <form action="login.php" method="POST">
                 <h1>Login</h1>
 
                 <p>
