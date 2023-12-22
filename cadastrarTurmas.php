@@ -1,21 +1,7 @@
 <?php
-
-    if(isset($_POST['submit']))
-    {
-
-        include_once('conexao.php');
-
-        $nome = $_POST['nome'];
-        $idTurno = $_POST['idTurno'];
-
-        $res = mysqli_query($mysqli, "INSERT INTO turmas(nome,idTurno) 
-        VALUES ('$nome','$idTurno')");
-
-        header('Location: login.php');
-    }
+        include_once('conexao.php')
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,11 +28,7 @@
         <form action="salvarTurmas.php" method="POST">
             <div class="form-group">
                 <label for="nome">Nome</label>
-                <input name="nome" required type="Varchar" id="nome" class="form-control" placeholder="Nome">
-            </div>
-            <div class="form-group">
-                <label for="idTurnos">Turno</label>
-                <input name="idTurno" required type="text" id="turno" class="form-control" placeholder="turno">
+                <input name="nome" required type="varchar" id="nome" class="form-control" placeholder="Nome">
             </div>
             <div class="form-group">
                 <button class="btn btn-success" type="submit">Cadastrar</button>

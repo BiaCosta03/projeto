@@ -1,11 +1,11 @@
 <?php
-	switch ($_REQUEST['acao']) {
+	switch ($_REQUEST ['acao']) {
 		case 'cadastrar':
 			$sql = "INSERT INTO turnos (
 					idTurnos,
-					nome,                                                                                                        
+					nome                                                                                                             
 					)VALUES(
-						".$_POST["idTurnos"].",
+						'".$_POST["idTurnos"]."',
 						'".$_POST["nome"]."'
 					)";
 
@@ -22,7 +22,7 @@
 		
 		case 'editar':
 			$sql = "UPDATE turnos SET
-						nome='".$_POST['nome']."',
+						nome='".$_POST['nome']."'
 					WHERE
 						idTurnos=".$_POST['idTurnos'];
 
@@ -40,9 +40,10 @@
 		case 'excluir':
 			$sql = "DELETE FROM turnos WHERE idTurnos=".$_REQUEST['idTurnos'];
 
-			$res = $conn->query($sql);
+			$res = $mysqli->query($sql);
 
 			if($res==true){
+
 				print "<script>alert('Excluiu com sucesso!');</script>";
 				print "<script>location.href='?page=listarTurnos';</script>";
 			}else{
@@ -50,4 +51,4 @@
 				print "<script>location.href='?page=listarTurnos';</script>";
 			}
 			break;
-	}
+		}

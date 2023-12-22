@@ -1,18 +1,12 @@
 <?php
-	switch ($_REQUEST['acao']) {
+	switch ($_REQUEST ['acao']) {
 		case 'cadastrar':
-			$sql = "INSERT INTO Turmas (
+			$sql = "INSERT INTO turmas (
 					idTurmas,
-					nome,
-					turno,
-					vagas,
-					alunosMatriculados                                                                                                            
+					nome                                                                                                           
 					)VALUES(
-						".$_POST["idTurmas"].",
-						'".$_POST["nome"]."',
-						'".$_POST["turno"]."',
-						'".$_POST["vagas"]."',
-						'".$_POST["alunosMatriculados"]."'
+						'".$_POST["idTurmas"]."',
+						'".$_POST["nome"]."'
 					)";
 
 			$res = $mysqli->query($sql);
@@ -27,10 +21,10 @@
 			break;
 		
 		case 'editar':
-			$sql = "UPDATE professores SET
-						nome='".$_POST['nome']."',
-                        turno='".$_POST['turno']."'
-						WHERE
+			$sql = "UPDATE turmas SET
+						nome='".$_POST['nome']."'
+						Turnos_idTurnos='".$_POST['Turnos_idTurnos']."'
+					WHERE
 						idTurmas=".$_POST['idTurmas'];
 
 			$res = $mysqli->query($sql);
@@ -50,6 +44,7 @@
 			$res = $mysqli->query($sql);
 
 			if($res==true){
+
 				print "<script>alert('Excluiu com sucesso!');</script>";
 				print "<script>location.href='?page=listarTurmas';</script>";
 			}else{
@@ -57,4 +52,4 @@
 				print "<script>location.href='?page=listarTurmas';</script>";
 			}
 			break;
-	}
+		}

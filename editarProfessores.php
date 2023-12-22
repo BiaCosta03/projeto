@@ -7,7 +7,7 @@
 ?>
 <div class="row">
     <div class="col-12">
-        <h1>Editar estudante</h1>
+        <h1>Editar Professores</h1>
         <form action="?page=salvarProfessores" method="POST"> 
         <input type="hidden" name="acao" value="editar">   
         <input type="hidden" name="idProfessores" value="<?php print $row->idProfessores; ?>">
