@@ -4,6 +4,7 @@
 			$sql = "INSERT INTO aluno (
 					idAluno,
 					nome,
+                    matrícula,
 					senha,
 					cpf,
 					telefone,
@@ -11,6 +12,7 @@
 					)VALUES(
 						'".$_POST["idAluno"]."',
 						'".$_POST["nome"]."',
+                        '".$_POST["matrícula"]."',
 						'".$_POST["senha"]."',
 						'".$_POST["cpf"]."',
 						'".$_POST["telefone"]."',
@@ -31,6 +33,7 @@
 		case 'editar':
 			$sql = "UPDATE aluno SET
 						nome='".$_POST['nome']."',
+                        matrícula='".$_POST['matrícula']."',
 						senha='".$_POST['senha']."',
 						cpf='".$_POST['cpf']."',
 						telefone='".$_POST['telefone']."',
@@ -38,7 +41,7 @@
 					WHERE
 						idAluno=".$_POST['idAluno'];
 
-			$res = $conn->query($sql);
+			$res = $mysqli->query($sql);
 
 			if($res==true){
 				print "<script>alert('Editou com sucesso!');</script>";

@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 ?>
 <!DOCTYPE html>
@@ -109,12 +109,12 @@ body{
             <div class="login">
             
                 <div class="formlogin">
-                <form action="login.php" method="POST">
+                <form action="testlogin.php" method="POST">
                 <h1>Login</h1>
 
                 <p>
                 <label>Matrícula</label>
-                <input type="Number" name="matricula">
+                <input type="Number" name="matrícula">
                 </p>
 
                 <p>
@@ -122,11 +122,9 @@ body{
                 <input type="Number" name="senha">
                 </p>
 
-                    <div class="botaoform">
-                        <a href="principalAdmin.php">Login</a>
-                    </div>
+                <input class="botaoform" type="submit" name="submit" value="Login">
+                </form>
                 </div>
-            </div>
         </div>
     </div>
 </body>
