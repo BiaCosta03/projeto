@@ -84,7 +84,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="?page=cadastrarDisciplinas">Cadastrar Disciplinas</a></li>
-            <li><a class="dropdown-item" href="#">Listar Disciplinas</a></li>
+            <li><a class="dropdown-item" href="?page=listarDisciplinas">Listar Disciplinas</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -164,6 +164,20 @@
                 break;
               case 'salvarTurnos':
                 include('salvarTurnos.php');
+                break;
+
+                //Disciplinas
+              case 'cadastrarDisciplinas':
+                include('cadastrarDisciplinas.php');
+                break;
+              case 'listarDisciplinas':
+                include('listarDisciplinas.php');
+                break;
+              case 'editarDisciplinas':
+                include('editarDisciplinas.php');
+                break;
+              case 'salvarDisciplinas':
+                include('salvarDisciplinas.php');
                 break;
 
               default:
