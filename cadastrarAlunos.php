@@ -1,5 +1,23 @@
 <?php
- include_once('conexao.php');
+
+    if(isset($_POST['submit']))
+    {
+
+        include_once('conexao.php');
+
+        $nome = $_POST['nome'];
+        $matrícula = $_POST['matrícula'];
+        $senha = $_POST['senha'];
+        $cpf = $_POST['cpf'];
+        $telefone = $_POST['telefone'];
+        $data_nascimento = $_POST['data_nascimento'];
+
+        $res = mysqli_query($mysqli, "INSERT INTO aluno (nome,matrícula,senha,cpf,data_nascimento) 
+        VALUES ('$nome','$matrícula','$senha','$cpf','$telefone','$data_nascimento')");
+
+        header('Location: login.php');
+    }
+
 ?>
 
 
@@ -55,7 +73,7 @@
                 <input name="data_nascimento" id="data_nascimento" required type="date" class="form-control" placeholder="data_nascimento" value="1990-01-01">
             </div>
             <div class="form-group">
-                <button class="btn btn-success" input type="submit" name="submit">Cadastrar</button>
+                <button class="btn btn-success" type="submit">Cadastrar</button>
             </div>
         </form>
 </body>
