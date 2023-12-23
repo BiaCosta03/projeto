@@ -43,7 +43,6 @@
         <div class="row">
             <div class="col-md-12">
               <img src="img/SIGAP.png">
-              <h1 class="text-center">SIGAP</h1>
             </div>
         </div>
         <div class="row">
