@@ -31,6 +31,10 @@
                 <input name="nome" required type="varchar" id="nome" class="form-control" placeholder="Nome">
             </div>
             <div class="form-group">
+                <label for="Turnos_idTurnos">Turno</label>
+                <input name="Turnos_idTurnos" required type="varchar" id="Turnos_idTurnos" class="form-control" placeholder="code">
+            </div>
+            <div class="form-group">
                 <button class="btn btn-success" type="submit">Cadastrar</button>
             </div>
         </form>

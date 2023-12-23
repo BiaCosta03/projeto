@@ -3,10 +3,12 @@
 		case 'cadastrar':
 			$sql = "INSERT INTO turmas (
 					idTurmas,
-					nome                                                                                                           
+					nome,
+					Turnos_idTurnos	                                                                                                             
 					)VALUES(
 						'".$_POST["idTurmas"]."',
-						'".$_POST["nome"]."'
+						'".$_POST["nome"]."',
+						'".$_POST["Turnos_idTurnos"]."'
 					)";
 
 			$res = $mysqli->query($sql);
@@ -22,8 +24,8 @@
 		
 		case 'editar':
 			$sql = "UPDATE turmas SET
-						nome='".$_POST['nome']."'
-						Turnos_idTurnos='".$_POST['Turnos_idTurnos']."'
+						nome='".$_POST['nome']."',
+						TurnosidTurnos='".$_POST['Turnos_idTurnos']."'
 					WHERE
 						idTurmas=".$_POST['idTurmas'];
 

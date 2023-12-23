@@ -3,6 +3,7 @@
 	$res = $mysqli->query($sql);
 	$qtd = $res->num_rows;
 
+
 ?>
     <div class="row">
         <div class="col-12">
