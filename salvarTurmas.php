@@ -1,18 +1,14 @@
 <?php
-	switch ($_REQUEST['acao']) {
+	switch ($_REQUEST ['acao']) {
 		case 'cadastrar':
-			$sql = "INSERT INTO Turmas (
+			$sql = "INSERT INTO turmas (
 					idTurmas,
 					nome,
-					turno,
-					vagas,
-					alunosMatriculados                                                                                                            
+					Turnos_idTurnos	                                                                                                             
 					)VALUES(
-						".$_POST["idTurmas"].",
+						'".$_POST["idTurmas"]."',
 						'".$_POST["nome"]."',
-						'".$_POST["turno"]."',
-						'".$_POST["vagas"]."',
-						'".$_POST["alunosMatriculados"]."'
+						'".$_POST["Turnos_idTurnos"]."'
 					)";
 
 			$res = $mysqli->query($sql);
@@ -27,15 +23,13 @@
 			break;
 		
 		case 'editar':
-			$sql = "UPDATE modelo SET
+			$sql = "UPDATE turmas SET
 						nome='".$_POST['nome']."',
-                        turno='".$_POST['turno']."',
-						vagas='".$_POST['vagas']."',
-						alunosMatriculados='".$_POST['AlunosMatriculados']."'
+						TurnosidTurnos='".$_POST['Turnos_idTurnos']."'
 					WHERE
 						idTurmas=".$_POST['idTurmas'];
 
-			$res = $conn->query($sql);
+			$res = $mysqli->query($sql);
 
 			if($res==true){
 				print "<script>alert('Editou com sucesso!');</script>";
@@ -49,9 +43,10 @@
 		case 'excluir':
 			$sql = "DELETE FROM turmas WHERE idTurmas=".$_REQUEST['idTurmas'];
 
-			$res = $conn->query($sql);
+			$res = $mysqli->query($sql);
 
 			if($res==true){
+
 				print "<script>alert('Excluiu com sucesso!');</script>";
 				print "<script>location.href='?page=listarTurmas';</script>";
 			}else{
@@ -59,4 +54,4 @@
 				print "<script>location.href='?page=listarTurmas';</script>";
 			}
 			break;
-	}
+		}

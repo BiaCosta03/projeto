@@ -1,11 +1,11 @@
 <?php
 	switch ($_REQUEST ['acao']) {
 		case 'cadastrar':
-			$sql = "INSERT INTO turnos (
-					idTurnos,
+			$sql = "INSERT INTO disciplinas (
+					idDisciplinas,
 					nome                                                                                                             
 					)VALUES(
-						'".$_POST["idTurnos"]."',
+						'".$_POST["idDisciplinas"]."',
 						'".$_POST["nome"]."'
 					)";
 
@@ -13,10 +13,10 @@
 
 			if($res==true){
 				print "<script>alert('Cadastrou com sucesso!');</script>";
-				print "<script>location.href='?page=listarTurnos';</script>";
+				print "<script>location.href='?page=listarDisciplinas';</script>";
 			}else{
 				print "<script>alert('Não foi possível!');</script>";
-				print "<script>location.href='?page=listarTurnos';</script>";
+				print "<script>location.href='?page=listarDisciplinas';</script>";
 			}
 			break;
 		
@@ -24,31 +24,31 @@
 			$sql = "UPDATE turnos SET
 						nome='".$_POST['nome']."'
 					WHERE
-						idTurnos=".$_POST['idTurnos'];
+						idDisciplinas=".$_POST['idDisciplinas'];
 
 			$res = $mysqli->query($sql);
 
 			if($res==true){
 				print "<script>alert('Editou com sucesso!');</script>";
-				print "<script>location.href='?page=listarTurnos';</script>";
+				print "<script>location.href='?page=listarDisciplinas';</script>";
 			}else{
 				print "<script>alert('Não foi possível!');</script>";
-				print "<script>location.href='?page=listarTurnos';</script>";
+				print "<script>location.href='?page=listarDisciplinas';</script>";
 			}
 			break;
 
 		case 'excluir':
-			$sql = "DELETE FROM turnos WHERE idTurnos=".$_REQUEST['idTurnos'];
+			$sql = "DELETE FROM disciplinas WHERE idDisciplinas=".$_REQUEST['idDisciplinas'];
 
 			$res = $mysqli->query($sql);
 
 			if($res==true){
 
 				print "<script>alert('Excluiu com sucesso!');</script>";
-				print "<script>location.href='?page=listarTurnos';</script>";
+				print "<script>location.href='?page=listarDisciplinas';</script>";
 			}else{
 				print "<script>alert('Não foi possível!');</script>";
-				print "<script>location.href='?page=listarTurnos';</script>";
+				print "<script>location.href='?page=listarDisciplinas';</script>";
 			}
 			break;
 		}

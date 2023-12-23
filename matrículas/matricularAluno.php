@@ -1,7 +1,10 @@
 <?php
-        include_once('conexao.php')
+
+        include_once('conexao.php');
+
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
    
-    <title>Cadastro</title>
+    <title>Matrícula</title>
     <style>
         body{
             background-color: #91DF76;
@@ -20,18 +23,22 @@
     </style>
 </head>
 <body>
-    <form action="?page=salvarTurnos" method="POST">
+    <form action="?page=salvarMatrcAluno" method="POST">
 	<input type="hidden" name="acao" value="cadastrar">
     <div class="mb-3">
 
-    <h1>Cadastrar Alunos</h1>
-        <form action="salvarTurnos.php" method="POST">
+    <h1>Vincule o Aluno</h1>
+        <form action="salvarMatricAlunos.php" method="POST">
             <div class="form-group">
-                <label for="nome">Nome</label>
-                <input name="nome" id="nome" required type="text" class="form-control" placeholder="nome">
+                <label for="Aluno_idAluno">Código do aluno</label>
+                <input name="Aluno_idAluno" id="Aluno_idAluno" required type="INT" class="form-control" placeholder="Code">
             </div>
             <div class="form-group">
-                <button class="btn btn-success" type="submit">Cadastrar</button>
+                <label for="Turmas_idTurmas">Código da Turma</label>
+                <input name="Turmas_idTurmas" id="Turmas_idTurmas" required type="INT" class="form-control" placeholder="Code">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success" type="submit">Matricular</button>
             </div>
         </form>
 </body>

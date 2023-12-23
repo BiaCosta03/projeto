@@ -15,19 +15,17 @@
 		print "<tr>";
 		print "<th>idTurmas</th>";
 		print "<th>nome</th>";
-        print "<th>turno</th>";
-        print "<th>vagas</th>";
-        print "<th>alunos matriculados</th>";
+		print "<th>Código do turno</th>";
 		print "</tr>";
 		while($row = $res->fetch_object()){
 			print "<tr>";
 			print "<td>".$row->idTurmas."</td>";
 			print "<td>".$row->nome."</td>";
-            print "<td>".$row->turno."</td>";
-            print "<td>".$row->vagas."</td>";
-            print "<td>".$row->alunosMatriculados."</td>";
+			print "<td>".$row->Turnos_idTurnos."</td>";
 			print "<td>
 					 <button onclick=\"location.href='?page=editarTurmas&idTurmas=".$row->idTurmas."';\" class='btn btn-primary'>Editar</button>
+
+					 <button onclick=\"location.href='?#=".$row->idTurmas."';\" class='btn btn-primary'>Alunos Matriculados</button>
 
 					 <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvarTurmas&acao=excluir&idTurmas=".$row->idTurmas."';}else{false;}\"  class='btn btn-danger'>Excluir</button>
 			       </td>";

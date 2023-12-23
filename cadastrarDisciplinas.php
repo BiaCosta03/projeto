@@ -20,12 +20,12 @@
     </style>
 </head>
 <body>
-    <form action="?page=salvarTurnos" method="POST">
+    <form action="?page=salvarDisciplinas" method="POST">
 	<input type="hidden" name="acao" value="cadastrar">
     <div class="mb-3">
 
     <h1>Cadastrar Alunos</h1>
-        <form action="salvarTurnos.php" method="POST">
+        <form action="salvarDisciplinas.php" method="POST">
             <div class="form-group">
                 <label for="nome">Nome</label>
                 <input name="nome" id="nome" required type="text" class="form-control" placeholder="nome">

@@ -1,7 +1,3 @@
-<?php
-session_start();
-
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -114,7 +110,7 @@ body{
 
                 <p>
                 <label>Matrícula</label>
-                <input type="Number" name="matricula">
+                <input type="Number" name="matrícula">
                 </p>
 
                 <p>
@@ -122,11 +118,10 @@ body{
                 <input type="Number" name="senha">
                 </p>
 
-                    <div class="botaoform">
-                        <a href="principalAdmin.php">Login</a>
-                    </div>
+                <input class="botaoform" type="submit" name="submit" value="Login">
+
+                </form>
                 </div>
-            </div>
         </div>
     </div>
 </body>

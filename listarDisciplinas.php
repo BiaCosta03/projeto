@@ -1,5 +1,5 @@
 <?php
-	$sql = "SELECT * FROM turnos";
+	$sql = "SELECT * FROM disciplinas";
 	$res = $mysqli->query($sql);
 	$qtd = $res->num_rows;
 
@@ -13,18 +13,18 @@
 		print "<p>Encontrou <b>$qtd</b> resultado(s).</p>";
 		print "<table class='table table-bordered table-striped table-hover'>";
 		print "<tr>";
-		print "<th>idTurnos</th>";
+		print "<th>idDisciplinas</th>";
 		print "<th>nome</th>";
 		print "</tr>";
 		while($row = $res->fetch_object()){
 			print "<tr>";
-			print "<td>".$row->idTurnos."</td>";
+			print "<td>".$row->idDisciplinas."</td>";
 			print "<td>".$row->nome."</td>";
 
 			print "<td>
-					 <button onclick=\"location.href='?page=editarTurnos&idTurnos=".$row->idTurnos."';\" class='btn btn-primary'>Editar</button>
+					 <button onclick=\"location.href='?page=editarDisciplinas&idDisciplinas=".$row->idDisciplinas."';\" class='btn btn-primary'>Editar</button>
 
-					 <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvarTurnos&acao=excluir&idTurnos=".$row->idTurnos."';}else{false;}\"  class='btn btn-danger'>Excluir</button>
+					 <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvarDiciplinas&acao=excluir&idDisciplinas=".$row->idDisciplinas."';}else{false;}\"  class='btn btn-danger'>Excluir</button>
 			       </td>";
 			print "</tr>";
 		}
