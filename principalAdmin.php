@@ -22,14 +22,16 @@
         margin-left: 25px;
         width: 100%;
       }
-      header{
-        width: 1220px;
-        max-width: 200px;
-        max-height:150px;
+      img{
+        max-width: 25+0px;
+        max-height:250px;
         top: 0px;
         right: 0px;
         left: 0px;
         margin: 0px auto;
+      }
+      .row{
+        text-align: center;
       }
     </style>
 </head>
@@ -37,7 +39,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="text-center">SIGAP</h1>
+              <img src="img/SIGAP.png">
+              <h1 class="text-center">SIGAP</h1>
             </div>
         </div>
         <div class="row">
