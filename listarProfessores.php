@@ -15,11 +15,13 @@
 		print "<tr>";
 		print "<th>Nome</th>";
 		print "<th>Matrícula</th>";
+		print "<th>cpf</th>";
 		print "</tr>";
 		while($row = $res->fetch_object()){
 			print "<tr>";
 			print "<td>".$row->nome."</td>";
 			print "<td>".$row->matrícula."</td>";
+			print "<td>".$row->cpf."</td>";
 			print "<td>
 					 <button onclick=\"location.href='?page=editarProfessores&idProfessores=".$row->idProfessores."';\" class='btn btn-primary'>Editar</button>
 
