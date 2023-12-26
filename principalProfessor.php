@@ -46,19 +46,17 @@
         </div>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="principalAluno.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="principalAdmin.php">Home</a>
         </li>
           <li class="nav-item dropdown">
-          <a class="nav-link active" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Gerenciar Boletins
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Diário
           </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link active" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Imformações pessoais
-          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Minhas turmas</a></li>
+          </ul>
         </li>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">

@@ -128,6 +128,9 @@
               case 'salvarAlunos':
                 include('salvarAlunos.php');
                 break;
+                case 'infoUsuario':
+                  include('infousuario.php');
+                  break;
 
                 //Professoresofessores
               case 'cadastrarProfessores':

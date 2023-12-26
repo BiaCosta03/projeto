@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24/12/2023 às 06:27
+-- Tempo de geração: 26/12/2023 às 04:02
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -30,7 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `idAdmin` int(11) NOT NULL,
   `nome` varchar(45) NOT NULL,
-  `senha` varchar(15) NOT NULL
+  `matrícula` varchar(11) NOT NULL,
+  `senha` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
@@ -42,7 +43,7 @@ CREATE TABLE `admin` (
 CREATE TABLE `aluno` (
   `idAluno` int(11) NOT NULL,
   `nome` varchar(45) NOT NULL,
-  `matrícula` varchar(45) NOT NULL,
+  `matrícula` varchar(15) NOT NULL,
   `senha` varchar(45) NOT NULL,
   `cpf` varchar(20) NOT NULL,
   `telefone` varchar(20) NOT NULL,
@@ -54,7 +55,7 @@ CREATE TABLE `aluno` (
 --
 
 INSERT INTO `aluno` (`idAluno`, `nome`, `matrícula`, `senha`, `cpf`, `telefone`, `data_nascimento`) VALUES
-(2, 'José Antônio da Silva', '20191194010028', '12345', '180.220.884-87', '84-9134-6571', '2005-01-01');
+(1, 'Beatriz Oliveira Costa', '20191194010009', '123', '170250', '84', '2004-01-01');
 
 -- --------------------------------------------------------
 
@@ -106,7 +107,7 @@ CREATE TABLE `mat_alunos_turmas` (
 CREATE TABLE `professores` (
   `idProfessores` int(11) NOT NULL,
   `nome` varchar(45) NOT NULL,
-  `matrícula` varchar(45) NOT NULL,
+  `matrícula` varchar(11) NOT NULL,
   `senha` varchar(45) NOT NULL,
   `cpf` varchar(20) NOT NULL,
   `telefone` varchar(20) NOT NULL
@@ -228,7 +229,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT de tabela `aluno`
 --
 ALTER TABLE `aluno`
-  MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `disciplinas`
@@ -240,7 +241,7 @@ ALTER TABLE `disciplinas`
 -- AUTO_INCREMENT de tabela `historico_boletins`
 --
 ALTER TABLE `historico_boletins`
-  MODIFY `idHistorico_Boletins` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idHistorico_Boletins` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `mat_alunos_turmas`
@@ -280,29 +281,29 @@ ALTER TABLE `turnos`
 -- Restrições para tabelas `historico_boletins`
 --
 ALTER TABLE `historico_boletins`
-  ADD CONSTRAINT `fk_Historico_Boletins_Mat_Alunos_Turmas1` FOREIGN KEY (`Mat_Alunos_Turmas_idMat_Alunos_Turmas`) REFERENCES `mat_alunos_turmas` (`idMat_Alunos_Turmas`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Historico_Boletins_Turma_Disc_Professor1` FOREIGN KEY (`Turma_Disc_Professor_idTurma_Disc_Professor`) REFERENCES `turma_disc_professor` (`idTurma_Disc_Professor`) ON DELETE CASCADE ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Historico_Boletins_Mat_Alunos_Turmas1` FOREIGN KEY (`Mat_Alunos_Turmas_idMat_Alunos_Turmas`) REFERENCES `mat_alunos_turmas` (`idMat_Alunos_Turmas`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Historico_Boletins_Turma_Disc_Professor1` FOREIGN KEY (`Turma_Disc_Professor_idTurma_Disc_Professor`) REFERENCES `turma_disc_professor` (`idTurma_Disc_Professor`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Restrições para tabelas `mat_alunos_turmas`
 --
 ALTER TABLE `mat_alunos_turmas`
-  ADD CONSTRAINT `fk_Mat_Alunos_Turmas_Aluno` FOREIGN KEY (`Aluno_idAluno`) REFERENCES `aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Mat_Alunos_Turmas_Turmas1` FOREIGN KEY (`Turmas_idTurmas`) REFERENCES `turmas` (`idTurmas`) ON DELETE CASCADE ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Mat_Alunos_Turmas_Aluno` FOREIGN KEY (`Aluno_idAluno`) REFERENCES `aluno` (`idAluno`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Mat_Alunos_Turmas_Turmas1` FOREIGN KEY (`Turmas_idTurmas`) REFERENCES `turmas` (`idTurmas`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Restrições para tabelas `turmas`
 --
 ALTER TABLE `turmas`
-  ADD CONSTRAINT `fk_Turmas_Turnos1` FOREIGN KEY (`Turnos_idTurnos`) REFERENCES `turnos` (`idTurnos`) ON DELETE CASCADE ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Turmas_Turnos1` FOREIGN KEY (`Turnos_idTurnos`) REFERENCES `turnos` (`idTurnos`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Restrições para tabelas `turma_disc_professor`
 --
 ALTER TABLE `turma_disc_professor`
-  ADD CONSTRAINT `fk_Turma_Disc_Professor_Disciplinas1` FOREIGN KEY (`Disciplinas_idDisciplinas`) REFERENCES `disciplinas` (`idDisciplinas`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Turma_Disc_Professor_Professores1` FOREIGN KEY (`Professores_idProfessores`) REFERENCES `professores` (`idProfessores`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Turma_Disc_Professor_Turmas1` FOREIGN KEY (`Turmas_idTurmas`) REFERENCES `turmas` (`idTurmas`) ON DELETE CASCADE ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Turma_Disc_Professor_Disciplinas1` FOREIGN KEY (`Disciplinas_idDisciplinas`) REFERENCES `disciplinas` (`idDisciplinas`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Turma_Disc_Professor_Professores1` FOREIGN KEY (`Professores_idProfessores`) REFERENCES `professores` (`idProfessores`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Turma_Disc_Professor_Turmas1` FOREIGN KEY (`Turmas_idTurmas`) REFERENCES `turmas` (`idTurmas`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

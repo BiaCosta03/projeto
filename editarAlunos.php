@@ -1,5 +1,5 @@
 <?php
-     include_once('conexao.php');
+include_once('conexao.php');
     $sql = "SELECT * FROM aluno WHERE idAluno=".$_REQUEST['idAluno'];
 	$res = $mysqli->query($sql);
 	$row = $res->fetch_object();

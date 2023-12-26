@@ -24,10 +24,10 @@
 	<input type="hidden" name="acao" value="cadastrar">
     <div class="mb-3">
 
-    <h1>Cadastrar Alunos</h1>
+    <h1>Cadastrar Disciplinas</h1>
         <form action="salvarDisciplinas.php" method="POST">
             <div class="form-group">
-                <label for="nome">Nome</label>
+                <label for="nome">Nome da disciplina</label>
                 <input name="nome" id="nome" required type="text" class="form-control" placeholder="nome">
             </div>
             <div class="form-group">

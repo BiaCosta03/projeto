@@ -13,12 +13,14 @@
 		print "<p>Encontrou <b>$qtd</b> resultado(s).</p>";
 		print "<table class='table table-bordered table-striped table-hover'>";
 		print "<tr>";
+		print "<th>Código do profesor</th>";
 		print "<th>Nome</th>";
 		print "<th>Matrícula</th>";
 		print "<th>cpf</th>";
 		print "</tr>";
 		while($row = $res->fetch_object()){
 			print "<tr>";
+			print "<td>".$row->idProfessores."</td>";
 			print "<td>".$row->nome."</td>";
 			print "<td>".$row->matrícula."</td>";
 			print "<td>".$row->cpf."</td>";

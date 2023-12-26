@@ -1,27 +1,3 @@
-<?php
-
-    if(isset($_POST['submit']))
-    {
-
-        include_once('conexao.php');
-
-        $nome = $_POST['nome'];
-        $matrícula = $_POST['matrícula'];
-        $senha = $_POST['senha'];
-        $cpf = $_POST['cpf'];
-        $telefone = $_POST['telefone'];
-        $data_nascimento = $_POST['data_nascimento'];
-
-        $res = mysqli_query($mysqli, "INSERT INTO aluno (nome,matrícula,senha,cpf,data_nascimento) 
-        VALUES ('$nome','$matrícula','$senha','$cpf','$telefone','$data_nascimento')");
-
-        header('Location: login.php');
-    }
-
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,31 +23,31 @@
     <h1>Cadastrar Alunos</h1>
         <form action="salvarAlunos.php" method="POST">
             <div class="form-group">
-                <label for="nome">Nome</label>
-                <input name="nome" id="nome" required type="text" class="form-control" placeholder="nome">
-            </div>
-            <div class="form-group">
-                <label for="matrícula">Matrícula</label>
-                <input name="matrícula" id="matrícula" required type="varchar" class="form-control" placeholder="matrícula">
-            </div>
-            <div class="form-group">
-                <label for="senha">Senha</label>
-                <input name="senha" id="senha" required type="password" class="form-control" placeholder="senha">
-            </div>
-            <div class="form-group">
-                <label for="cpf">cpf</label>
-                <input name="cpf" id="cpf" required type="varchar" class="form-control" placeholder="cpf"  maxlength="15" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
-                <small>Formato: 999.999.999-99</small>
-            </div>
-            <div class="form-group">
-                <label for="telefone">telefone</label>
-                <input name="telefone" id="telefone" required type="tel" class="form-control" placeholder="telefone" pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}">
-                <small>Formato: 11-9999-9999</small>
-            </div>
-            <div class="form-group">
-                <label for="data_nascimento">Data de Nascimento</label>
-                <input name="data_nascimento" id="data_nascimento" required type="date" class="form-control" placeholder="data_nascimento" value="1990-01-01">
-            </div>
+            <tr>
+                <td><label for="nome">Nome</td>
+                <td><input name="nome" id="nome" required type="text" class="form-control" placeholder="nome"></td>
+    </tr>
+            <tr>
+                <td><label for="matrícula">Matrícula</td>
+                <td><input name="matrícula" id="matrícula" required type="varchar" class="form-control" placeholder="matrícula"><td>
+            </tr>
+            <tr>
+                <td for="senha">Senha</td>
+                <td><input name="senha" id="senha" required type="password" class="form-control" placeholder="senha"><td>
+    </tr>
+            <tr>
+                <td><label for="cpf">cpf</td>
+                <td><input name="cpf" id="cpf" required type="varchar" class="form-control" placeholder="Formato: 999.999.999-99"  maxlength="15" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"></td>
+                <td><label for="nome"></td>
+            </tr>
+            <tr>
+                <td><label for="telefone">telefone</td>
+                <td><input name="telefone" id="telefone" required type="tel" class="form-control" placeholder="Formato: 11-9999-9999" pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}"></td>
+            </tr>
+            <tr>
+                <td><label for="data_nascimento">Data de Nascimento</td>
+                <td><input name="data_nascimento" id="data_nascimento" required type="date" class="form-control" placeholder="data_nascimento" value="1990-01-01"><td>
+    </tr>
             <div class="form-group">
                 <button class="btn btn-success" type="submit">Cadastrar</button>
             </div>
