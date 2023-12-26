@@ -20,6 +20,7 @@
         background-color: #98FB98;
         margin-left: 95px;
         width: 100%;
+        text-align: center;
       }
       img{
         max-width: 25+0px;

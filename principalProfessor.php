@@ -18,17 +18,20 @@
         display: block;
         padding: 70px 0;
         background-color: #98FB98;
-        margin-left: 25px;
+        margin-left: 175px;
         width: 100%;
+        text-align: center;
       }
-      header{
-        width: 1220px;
-        max-width: 200px;
-        max-height:150px;
+      img{
+        max-width: 25+0px;
+        max-height:250px;
         top: 0px;
         right: 0px;
         left: 0px;
         margin: 0px auto;
+      }
+      .row{
+        text-align: center;
       }
     </style>
 </head>
@@ -36,7 +39,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="text-center">SIGAP</h1>
+              <img src="img/SIGAP.png">
             </div>
         </div>
         <div class="row">
@@ -69,10 +72,6 @@
           <?php
             //conexão com o banco
             include('conexao.php');
-
-            
-            
-
           ?>
         </div>
       </div>
