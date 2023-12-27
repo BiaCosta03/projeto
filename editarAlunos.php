@@ -3,7 +3,7 @@ include_once('conexao.php');
     $sql = "SELECT * FROM aluno WHERE idAluno=".$_REQUEST['idAluno'];
 	$res = $mysqli->query($sql);
 	$row = $res->fetch_object();
-   
+    
 ?>
 <div class="row">
     <div class="col-12">
