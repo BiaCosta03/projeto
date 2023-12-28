@@ -2,6 +2,7 @@
 	$sql = "SELECT * FROM turmas";
 	$res = $mysqli->query($sql);
 	$qtd = $res->num_rows;
+	include_once('conexao.php');
 
 ?>
     <div class="row">

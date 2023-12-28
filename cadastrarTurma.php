@@ -1,6 +1,5 @@
 <?php
         $sql = "SELECT * FROM turmas";
-        $sql = "SELECT * FROM turnos WHERE idTurnos=".$_REQUEST['idTurnos'];
         $res = $mysqli->query($sql);
         $row = $res->fetch_object();
         include_once('conexao.php');
@@ -36,7 +35,7 @@
     </tr>
             <tr>
                 <td><label for="Turnos_idTurnos">Código do turno</td>
-                <td><input value="<?php print $row->idTurnos;?>" name="Turnos_idTurnos" required type="varchar" id="Turnos_idTurnos" class="form-control" placeholder="Código"></td>
+                <td><input name="Turnos_idTurnos" required type="varchar" id="Turnos_idTurnos" class="form-control" placeholder="Código"></td>
     </tr>
             <div class="form-group">
                 <button class="btn btn-success" type="submit">Cadastrar</button>

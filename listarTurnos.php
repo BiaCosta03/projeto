@@ -3,6 +3,7 @@
 	$res = $mysqli->query($sql);
 	$qtd = $res->num_rows;
 
+
 ?>
     <div class="row">
         <div class="col-12">
@@ -23,6 +24,8 @@
 
 			print "<td>
 					 <button onclick=\"location.href='?page=editarTurnos&idTurnos=".$row->idTurnos."';\" class='btn btn-primary'>Editar</button>
+
+					 <button onclick=\"location.href='?page=cadastrarTurmas&idTurnos=".$row->idTurnos."';\" class='btn btn-primary'>Cadastrar Turmas</button>
 
 					 <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvarTurnos&acao=excluir&idTurnos=".$row->idTurnos."';}else{false;}\"  class='btn btn-danger'>Excluir</button>
 			       </td>";

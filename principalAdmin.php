@@ -79,8 +79,8 @@
             Gerenciar Turmas
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="?page=cadastrarTurmas">Cadastrar Turmas</a></li>
-            <li><a class="dropdown-item" href="?page=listarTurmas">Listar Turmas</a></li>
+            <li><a class="dropdown-item" href="?page=cadastrarTurma">Cadastrar Turmas</a></li>
+            <li><a class="dropdown-item" href="?page=listarTurma">Listar Turmas</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -147,8 +147,11 @@
                 break;
 
                 //Turmas
-              case 'cadastrarTurmas':
-                include('cadastrarTurmas.php');
+              case 'cadastrarTurma':
+                include('cadastrarTurma.php');
+                break;
+              case 'cadastrarTurma':
+                include('cadastrarTurma.php');
                 break;
               case 'listarTurmas':
                 include('listarTurmas.php');
@@ -174,6 +177,7 @@
               case 'matProfessorTurmas':
                     include('matProfessorTurmas.php');
                   break;
+
   
 
                 //Turnos
