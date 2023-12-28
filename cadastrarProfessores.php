@@ -43,28 +43,26 @@
 
     <h1>Cadastrar Professores</h1>
         <form action="salvarProfessores.php" method="POST">
-            <div class="form-group">
-                <label for="nome">Nome</label>
-                <input name="nome" id="nome" required type="text" id="nome" class="form-control" placeholder="Nome">
-            </div>
-            <div class="form-group">
-                <label for="matrícula">Matrícula</label>
-                <input name="matrícula" id="matrícula" required type="varchar" class="form-control" placeholder="matrícula">
-            </div>
-            <div class="form-group">
-                <label for="senha">Senha</label>
-                <input name="senha" id="senha" required type="password" id="grupo" class="form-control" placeholder="senha">
-            </div>
-            <div class="form-group">
-                <label for="cpf">cpf</label>
-                <input name="cpf" id="cpf" required type="varchar" id="cpf" class="form-control" placeholder="cpf"  maxlength="15" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
-                <small>Formato: 999.999.999-99</small>
-            </div>
-            <div class="form-group">
-                <label for="telefone">telefone</label>
-                <input name="telefone" id="telefone" required type="tel" id="telefone" class="form-control" placeholder="telefone" pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}">
-                <small>Formato: 11-9999-9999</small>
-            </div>
+            <tr>
+               <td><label for="nome">Nome</td>
+                <td><input name="nome" id="nome" required type="text" id="nome" class="form-control" placeholder="Nome"></td>
+            </tr>
+            <tr>
+                <td><label for="matrícula">Matrícula<td>
+                <td><input name="matrícula" id="matrícula" required type="varchar" class="form-control" placeholder="matrícula"></td>
+            </tr>
+            <tr>
+                <td><label for="senha">Senha</td>
+                <td><input name="senha" id="senha" required type="password" id="grupo" class="form-control" placeholder="senha"></td>
+            </tr>
+            <tr>
+                <td><label for="cpf">cpf</td>
+                <td><input name="cpf" id="cpf" required type="varchar" id="cpf" class="form-control" placeholder="Formato: 999.999.999-99"></td>
+    </tr>
+            <tr>
+                <td><label for="telefone">telefone</td>
+               <td><input name="telefone" id="telefone" required type="tel" id="telefone" class="form-control" placeholder="Formato: 11-9999-999"></td>
+    </tr>
             <div class="form-group">
                 <button class="btn btn-success" type="submit">Cadastrar</button>
             </div>

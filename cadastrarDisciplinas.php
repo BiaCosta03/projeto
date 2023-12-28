@@ -26,10 +26,10 @@
 
     <h1>Cadastrar Disciplinas</h1>
         <form action="salvarDisciplinas.php" method="POST">
-            <div class="form-group">
-                <label for="nome">Nome da disciplina</label>
-                <input name="nome" id="nome" required type="text" class="form-control" placeholder="nome">
-            </div>
+            <td>
+                <tr><label for="nome">Nome da disciplina</tr>
+                <tr><input name="nome" id="nome" required type="text" class="form-control" placeholder="nome"></tr>
+    </td>
             <div class="form-group">
                 <button class="btn btn-success" type="submit">Cadastrar</button>
             </div>

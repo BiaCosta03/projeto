@@ -159,6 +159,22 @@
               case 'salvarTurmas':
                 include('salvarTurmas.php');
                 break;
+              case 'salvarmatAlunos':
+                  include('salvarmatAlunos.php');
+                  break;
+              case 'listarmatAlunos':
+                  include('listarmatAlunos.php');
+                  break;
+              case 'matAlunosTurmas':
+                  include('matAlunosTurmas.php');
+                  break;
+              case 'listarmatProfessores':
+                  include('listarmatProfessores.php');
+                  break;
+              case 'matProfessorTurmas':
+                    include('matProfessorTurmas.php');
+                  break;
+  
 
                 //Turnos
               case 'cadastrarTurno':

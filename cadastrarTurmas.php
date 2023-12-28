@@ -26,14 +26,14 @@
 
     <h1>Cadastrar Turmas</h1>
         <form action="salvarTurmas.php" method="POST">
-            <div class="form-group">
-                <label for="nome">Nome</label>
-                <input name="nome" required type="varchar" id="nome" class="form-control" placeholder="Nome">
-            </div>
-            <div class="form-group">
-                <label for="Turnos_idTurnos">Turno</label>
-                <input name="Turnos_idTurnos" required type="varchar" id="Turnos_idTurnos" class="form-control" placeholder="code">
-            </div>
+            <tr>
+                <td><label for="nome">Nome</td>
+                <td><input name="nome" required type="varchar" id="nome" class="form-control" placeholder="Nome"></td>
+    </tr>
+            <tr>
+                <td><label for="Turnos_idTurnos">Turno</td>
+                <td><input name="Turnos_idTurnos" required type="varchar" id="Turnos_idTurnos" class="form-control" placeholder="Código"></td>
+    </tr>
             <div class="form-group">
                 <button class="btn btn-success" type="submit">Cadastrar</button>
             </div>

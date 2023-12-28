@@ -20,8 +20,8 @@
 		print "</tr>";
 		while($row = $res->fetch_object()){
 			print "<tr>";
-			print "<td>".$row->idAluno_idAluno."</td>";
-			print "<td>".$row->idTurmas_idTurmas."</td>";
+			print "<td>".$row->Aluno_idAluno."</td>";
+			print "<td>".$row->Turmas_idTurmas."</td>";
 			print "<td>
 					 <button onclick=\"location.href='?page=editarmatAlunos&idMat_Alunos_Turmas=".$row->idMat_Alunos_Turmas."';\" class='btn btn-primary'>Editar</button>
 

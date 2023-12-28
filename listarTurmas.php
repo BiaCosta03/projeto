@@ -25,7 +25,9 @@
 			print "<td>
 					 <button onclick=\"location.href='?page=editarTurmas&idTurmas=".$row->idTurmas."';\" class='btn btn-primary'>Editar</button>
 
-					 <button onclick=\"location.href='?#=".$row->idTurmas."';\" class='btn btn-primary'>Alunos Matriculados</button>
+					 <button onclick=\"location.href='?page=matAlunosTurmas&idTurmas=".$row->idTurmas."';\" class='btn btn-primary'>Matricular Alunos</button>
+
+					 <button onclick=\"location.href='?page=matProfessorTurmas&idTurmas=".$row->idTurmas."';\" class='btn btn-primary'>Matricular Professsores</button>
 
 					 <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvarTurmas&acao=excluir&idTurmas=".$row->idTurmas."';}else{false;}\"  class='btn btn-danger'>Excluir</button>
 			       </td>";

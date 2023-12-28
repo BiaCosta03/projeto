@@ -1,6 +1,5 @@
 <?php
-        include_once('conexao.php')
-
+include_once('conexao.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,17 +19,23 @@
     </style>
 </head>
 <body>
-    <form action="?page=salvarTurnos" method="POST">
-	<input type="hidden" name="acao" value="cadastrar">
-    <div class="mb-3">
 
-    <h1>Cadastrar Alunos</h1>
-        <form action="salvarTurnos.php" method="POST">
-            <tr>
-                <td><label for="nome">Nome</td>
-                <td><input name="nome" id="nome" required type="text" class="form-control" placeholder="nome"></td>
-    </tr>
+    <h1>Matricular professor em turma</h1>
+    <form action="salvarmatProfessor.php" method="POST">
+	<input type="hidden" name="acao" value="cadastrar">
             <div class="form-group">
+            <tr>
+                <td><label for="Turmas_idTurmas">Código da Turma</td>
+                <td><input name="Turmas_idTurmas" id="Turmas_idTurmas" required type="text" class="form-control" placeholder="Código"></td>
+    </tr>
+            <tr>
+                <td><label for="Disciplinas_idDisciplinas">Código da Disciplina</td>
+                <td><input name="Disciplinas_idDisciplinas" id="Disciplinas_idDisciplinas" required type="text" class="form-control" placeholder="Código"><td>
+    </tr>
+            <tr>
+                <td><label for="Professores_idProfessores">Código do Professor</td>
+                <td><input name="Professores_idProfessores" id="Professores_idProfessores" required type="text" class="form-control" placeholder="Código"><td>
+    </tr>
                 <button class="btn btn-success" type="submit">Cadastrar</button>
             </div>
         </form>

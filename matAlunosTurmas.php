@@ -31,7 +31,7 @@ include_once('conexao.php');
             <tr>
                 <td><label for="Turmas_idTurmas">Código da turma</td>
                 <td><input name="Turmas_idTurmas" id="Turmas_idTurmas" required type="text" class="form-control" placeholder="Código"><td>
-            <div class="form-group">
+            </td>
                 <button class="btn btn-success" type="submit">Cadastrar</button>
             </div>
         </form>
