@@ -1,7 +1,4 @@
 <?php
-
-	include_once('conexao.php');
-
 	switch ($_REQUEST ['acao']) {
 		case 'cadastrar':
 			$sql = "INSERT INTO turma_disc_professor (

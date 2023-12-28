@@ -23,10 +23,11 @@
     </style>
 </head>
 <body>
-
-    <h1>Matricular Aluno em Turma</h1>
-    <form action="salvarmatAlunos.php" method="POST">
+<form action="?page=salvarmatAlunos" method="POST">
 	<input type="hidden" name="acao" value="cadastrar">
+
+    <h1>Matricular Aluno na Turma</h1>
+    <form action="salvarmatAlunos.php" method="POST">
     <input type="hidden" name="idTurmas" value="<?php print $row->idTurmas; ?>">
             <div class="form-group">
             <tr>

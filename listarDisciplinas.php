@@ -6,7 +6,7 @@
 ?>
     <div class="row">
         <div class="col-12">
-            <h1>Turnos Cadastrados</h1>
+            <h1>Disciplinas Cadastradas</h1>
         </div>
 		<?php
         if($qtd > 0){
