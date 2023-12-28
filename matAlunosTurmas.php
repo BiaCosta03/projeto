@@ -1,5 +1,9 @@
 <?php
-include_once('conexao.php');
+ $sql = "SELECT * FROM mat_alunos_turmas";
+ $sql = "SELECT * FROM turmas WHERE idTurmas=".$_REQUEST['idTurmas'];
+ $res = $mysqli->query($sql);
+ $row = $res->fetch_object();
+ include_once('conexao.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,14 +27,15 @@ include_once('conexao.php');
     <h1>Matricular Aluno em Turma</h1>
     <form action="salvarmatAlunos.php" method="POST">
 	<input type="hidden" name="acao" value="cadastrar">
+    <input type="hidden" name="idTurmas" value="<?php print $row->idTurmas; ?>">
             <div class="form-group">
             <tr>
                 <td><label for="Aluno_idAluno">Código do Aluno</td>
                 <td><input name="Aluno_idAluno" id="Aluno_idAluno" required type="text" class="form-control" placeholder="Código"></td>
     </tr>
             <tr>
-                <td><label for="Turmas_idTurmas">Código da turma</td>
-                <td><input name="Turmas_idTurmas" id="Turmas_idTurmas" required type="text" class="form-control" placeholder="Código"><td>
+                <td><label for="Turmas_idTurmas">Nome da Turma</td>
+                <td><input value="<?php print $row->nome ?>" name="Turmas_idTurmas" id="Turmas_idTurmas" required type="text" class="form-control" placeholder="Código"><td>
             </td>
                 <button class="btn btn-success" type="submit">Cadastrar</button>
             </div>
