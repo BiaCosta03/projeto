@@ -1,26 +1,18 @@
 <?php
-    include_once('conexao.php');
-    if(!empty($_GET['search']))
-    {
-        $data = $_GET['search'];
-        $sql = "SELECT * FROM aluno WHERE idAluno LIKE '%$data%' or nome LIKE '%$data%' or matrícula LIKE '%$data%' ORDER BY idAluno DESC";
-    }
-    else
-    {
-		echo "nao encontrado";
-        $sql = "SELECT * FROM aluno ORDER BY idAluno DESC";
-    }
-    $res = $mysqli->query($sql);
+	$sql = "SELECT * FROM aluno";
+	$res = $mysqli->query($sql);
 	$qtd = $res->num_rows;
+
 ?>
 <style>
-	 .box-search{
+        .box-search{
             display: flex;
             justify-content: center;
             gap: .1%;
         }
     </style>
-    <div class="row">
+	
+	<div class="row">
         <div class="col-12">
             <h1>Lista de estudantes</h1>
         </div>
@@ -53,32 +45,11 @@
 			print "<td>
 					 <button onclick=\"location.href='?page=editarAlunos&idAluno=".$row->idAluno."';\" class='btn btn-primary'>Editar</button>
 
-					 <button onclick=\"location.href='?page=infoUsuario&idAluno=".$row->idAluno."';\" class='btn btn-primary'>Dados Pessoais</button>
+					 <button onclick=\"location.href='?page=infoAluno&idAluno=".$row->idAluno."';\" class='btn btn-primary'>Dados Pessoais</button>
 
 					 <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvarAlunos&acao=excluir&idAluno=".$row->idAluno."';}else{false;}\"  class='btn btn-danger'>Excluir</button>
 			       </td>";
 			
 		}
 		print "</table>";
-	}else{
-		print "Não encontrou resultado";
 	}
-	?>
-	<html>
-		<script>
-		var search = document.getElementById('pesquisar');
-
-		search.addEventListener("keydown", function(event) {
-		if (event.key === "Enter") 
-		{
-			searchData();
-		}
-		});
-
-		function searchData()
-{
-	window.location = 'principalAdmin.php?page=listarAlunos?search='+search.value;
-}
-		</script>
-	</html>
-	

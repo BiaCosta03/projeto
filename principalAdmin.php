@@ -125,8 +125,8 @@
               case 'salvarAlunos':
                 include('salvarAlunos.php');
                 break;
-                case 'infoUsuario':
-                  include('infousuario.php');
+                case 'infoAluno':
+                  include('infoAluno.php');
                   break;
 
                 //Professoresofessores
@@ -142,6 +142,9 @@
               case 'salvarProfessores':
                 include('salvarProfessores.php');
                 break;
+                case 'infoProfessor':
+                  include('infoProfessor.php');
+                  break;
 
                 //Turmas
               case 'cadastrarTurma':
