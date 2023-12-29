@@ -2,6 +2,7 @@
 	$sql = "SELECT * FROM disciplinas";
 	$res = $mysqli->query($sql);
 	$qtd = $res->num_rows;
+	include('conexao.php');
 
 ?>
     <div class="row">

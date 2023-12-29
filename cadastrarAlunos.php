@@ -46,7 +46,7 @@
             </tr>
             <tr>
                 <td><label for="data_nascimento">Data de Nascimento</td>
-                <td><input name="data_nascimento" id="data_nascimento" required type="date" class="form-control" placeholder="data_nascimento" value="1990-01-01"><td>
+                <td><input name="data_nascimento" id="data_nascimento" required type="date" class="form-control" placeholder="data_nascimento" value="01-01-1990"><td>
     </tr>
             <div class="form-group">
                 <button class="btn btn-success" type="submit">Cadastrar</button>
