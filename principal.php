@@ -151,7 +151,7 @@ body{
                 <input type="varchar" name="senha">
                 </p>
 
-                <input class="botaoform" type="submit" value="login">
+                <input class="botaoform" type="submit" value="Entrar">
 
                 </form>
                 </div>
