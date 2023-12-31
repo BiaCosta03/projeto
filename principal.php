@@ -1,3 +1,35 @@
+<?php
+include_once('conexao.php');
+
+if($_SERVER["REQUEST_METHOD"]=="POST")
+{
+   $matricula=$_POST["matricula"];
+   $senha=$_POST["senha"];
+
+   $sql = "SELECT * FROM usuarios where matricula= '".$matricula."' AND senha='".$senha."'";
+	$res = mysqli_query($mysqli,$sql);
+   $row=mysqli_fetch_array($res);
+
+if($row["username"]=="admin");
+{  
+   
+   header("location:principalAdmin.php");
+}
+
+if($row["username"]=="aluno");
+{
+   
+   header("location:principalAluno.php");
+}
+
+if($row["username"]=="professor");
+{
+   
+   header("location:principalProfessor.php");
+}
+
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -104,22 +136,22 @@ body{
             </div>
             
             <div class="login">
-            
+
                 <div class="formlogin">
-                <form action="login.php" method="POST">
+                <form action="#" method="POST">
                 <h1>Login</h1>
 
                 <p>
                 <label>Matrícula</label>
-                <input type="Number" name="matrícula">
+                <input type="varchar" name="matricula">
                 </p>
 
                 <p>
                 <label>Senha</label>
-                <input type="Number" name="senha">
+                <input type="varchar" name="senha">
                 </p>
 
-                <input class="botaoform" type="submit" name="submit" value="Login">
+                <input class="botaoform" type="submit" value="login">
 
                 </form>
                 </div>

@@ -16,39 +16,58 @@
     </style>
 </head>
 <body>
+    <form action="?page=salvarnotas" method="POST">
+	<input type="hidden" name="acao" value="cadastrar">
+    <div class="mb-3">
 
-    <h1>Cadastrar Notas</h1>
-        <form action="salvarnotas.php" method="POST">
+            <h1>Cadastrar Notas</h1>
+            <form action="salvarnotas.php" method="POST">
             <div class="form-group">
             <tr>
-                <td><label for="nota1Bim">Nota 1Bimestre</td>
-                <td><input name="nota1Bim" id="nota1Bim" required type="double" class="form-control" placeholder="Nota1"></td>
+                <td><label for="Mat_Alunos_Turmas_idMat_Alunos_Turmas">Código da matrícula do Aluno:</td>
+                <td><input class="form-control" type="text" id="Mat_Alunos_Turmas_idMat_Alunos_Turmas" name="Mat_Alunos_Turmas_idMat_Alunos_Turmas"></td>
+            </tr>
+            <tr>
+                <td><label for="Turma_Disc_Professor_idTurma_Disc_Professor">Código da matrícula do professor:</td>
+                <td><input class="form-control" type="text" id="Turma_Disc_Professor_idTurma_Disc_Professor" name="Turma_Disc_Professor_idTurma_Disc_Professor"></td>
+            </tr>
+        <tr>
+                <td><label for="nota1Bim">Nota 1:</td>
+                <td><input class="form-control" type="text" id="nota1Bim" name="nota1Bim"></td>
+            </tr>
+
+            <tr>
+                <td><label for="nota2Bim">Nota 2:</td>
+                <td><input class="form-control" type="text" name="nota2Bim"></td>
+            </tr>
+
+            <tr>
+                <td><label for="nota3Bim">Nota 3:</td>
+                <td><input class="form-control" type="text" name="nota3Bim"></td>
+            </tr>
+
+            <tr>
+                <td><label for="nota4Bim">Nota 4:</td>
+                <td><input class="form-control" type="text" name="nota4Bim"></td>
+            </tr>
+
+            <tr>
+                <td><label for="provaFinal">Prova Final:</td>
+                <td><input class="form-control" type="text" name="provaFinal"></td>
     </tr>
-            <tr>
-                <td><label for="nota2Bim">Nota 2Bimestre</td>
-                <td><input name="nota2Bim" id="nota2bIM" required type="double" class="form-control" placeholder="Nota2"><td>
-            </tr>
-            <tr>
-                <td for="nota3Bim">Nota 3Bimestre</td>
-                <td><input name="nota3Bim" id="nota3Bim" required type="double" class="form-control" placeholder="Nota3"><td>
+
+    <tr>
+                <td><label for="mediaFinal">Média Final:</td>
+                <td><input class="form-control" type="text" name="mediaFinal"></td>
     </tr>
-            <tr>
-                <td><label for="nota4Bim">Nota 4Bimestre</td>
-                <td><input name="nota4Bim" id="nota4Bim" required type="double" class="form-control" placeholder="Nota4"></td>
-            </tr>
-            <tr>
-                <td><label for="provafinal">Prova Fnal</td>
-                <td><input name="provafinal" id="provafinal" required type="double" class="form-control" placeholder="Prova final"></td>
-            </tr>
-            <div class="form-group">
-                <button class="btn btn-success" type="submit">cadastrar</button>
+
+    <div class="form-group">
+                <button class="btn btn-success" type="submit">Enviar</button>
             </div>
-        </form>
+    </form>
+
+
 </body>
 </html>
-<?php
-    include_once 'listarNota.php';
-    include_once('conexao.php');
-    exibirHistorico_Boletins();
-?>
+
 
