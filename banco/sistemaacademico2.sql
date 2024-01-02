@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26/12/2023 às 04:02
+-- Tempo de geração: 02/01/2024 às 03:19
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -34,6 +34,13 @@ CREATE TABLE `admin` (
   `senha` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Despejando dados para a tabela `admin`
+--
+
+INSERT INTO `admin` (`idAdmin`, `nome`, `matrícula`, `senha`) VALUES
+(1, 'admin', '2023003', '12345');
+
 -- --------------------------------------------------------
 
 --
@@ -55,7 +62,10 @@ CREATE TABLE `aluno` (
 --
 
 INSERT INTO `aluno` (`idAluno`, `nome`, `matrícula`, `senha`, `cpf`, `telefone`, `data_nascimento`) VALUES
-(1, 'Beatriz Oliveira Costa', '20191194010009', '123', '170250', '84', '2004-01-01');
+(2, 'Beatriz Oliveira Costa', '20191194010009', '1234', '170.250.587-50', '84-8165-3171', '2004-01-01'),
+(3, 'Beatriz Oliveira Costa', '20191194010009', '1234', '170.250.587-50', '84-8165-3171', '2004-01-01'),
+(4, 'vivi', '20211194010004', '123', '234.876.456-00', '84-8165-3171', '2005-01-27'),
+(5, 'Mikael de Oliveira Costa', '201911940021', '5678', '150.220.584-57', '84-9165-3171', '2001-08-18');
 
 -- --------------------------------------------------------
 
@@ -67,6 +77,13 @@ CREATE TABLE `disciplinas` (
   `idDisciplinas` int(11) NOT NULL,
   `nome` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `disciplinas`
+--
+
+INSERT INTO `disciplinas` (`idDisciplinas`, `nome`) VALUES
+(1, 'Português');
 
 -- --------------------------------------------------------
 
@@ -82,6 +99,7 @@ CREATE TABLE `historico_boletins` (
   `nota4Bim` double DEFAULT NULL,
   `provaFinal` double DEFAULT NULL,
   `mediaFinal` double DEFAULT NULL,
+  `resultado` varchar(45) NOT NULL,
   `Mat_Alunos_Turmas_idMat_Alunos_Turmas` int(11) NOT NULL,
   `Turma_Disc_Professor_idTurma_Disc_Professor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -98,6 +116,17 @@ CREATE TABLE `mat_alunos_turmas` (
   `Turmas_idTurmas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Despejando dados para a tabela `mat_alunos_turmas`
+--
+
+INSERT INTO `mat_alunos_turmas` (`idMat_Alunos_Turmas`, `Aluno_idAluno`, `Turmas_idTurmas`) VALUES
+(14, 2, 1),
+(16, 3, 7),
+(19, 2, 9),
+(22, 2, 9),
+(23, 2, 9);
+
 -- --------------------------------------------------------
 
 --
@@ -113,6 +142,13 @@ CREATE TABLE `professores` (
   `telefone` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Despejando dados para a tabela `professores`
+--
+
+INSERT INTO `professores` (`idProfessores`, `nome`, `matrícula`, `senha`, `cpf`, `telefone`) VALUES
+(1, 'José Alfredo da Silva', '201911940', '1457325', '170.270.597-51', '84-9121-9312');
+
 -- --------------------------------------------------------
 
 --
@@ -124,6 +160,23 @@ CREATE TABLE `turmas` (
   `nome` varchar(45) DEFAULT NULL,
   `Turnos_idTurnos` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `turmas`
+--
+
+INSERT INTO `turmas` (`idTurmas`, `nome`, `Turnos_idTurnos`) VALUES
+(1, '7anoB2019', 1),
+(2, '6anoA2020', 2),
+(4, '9anoA2024', 1),
+(6, '8anob2019', 1),
+(7, '7anoA2020', 1),
+(9, '2anoB2020', 1),
+(10, '7anoB2024', 2),
+(11, '8anoA2005', 1),
+(12, '9anoc2020', 3),
+(14, '6anoB2024', 2),
+(15, 'hgtyhu', 1);
 
 -- --------------------------------------------------------
 
@@ -138,6 +191,13 @@ CREATE TABLE `turma_disc_professor` (
   `Professores_idProfessores` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Despejando dados para a tabela `turma_disc_professor`
+--
+
+INSERT INTO `turma_disc_professor` (`idTurma_Disc_Professor`, `Turmas_idTurmas`, `Disciplinas_idDisciplinas`, `Professores_idProfessores`) VALUES
+(3, 7, 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -148,6 +208,37 @@ CREATE TABLE `turnos` (
   `idTurnos` int(11) NOT NULL,
   `nome` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `turnos`
+--
+
+INSERT INTO `turnos` (`idTurnos`, `nome`) VALUES
+(1, 'matutino'),
+(2, 'vespertino'),
+(3, 'noturno');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `matricula` varchar(45) NOT NULL,
+  `senha` varchar(45) NOT NULL,
+  `username` varchar(45) NOT NULL DEFAULT 'user'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `matricula`, `senha`, `username`) VALUES
+(1, '2023003', '12345', 'admin'),
+(2, '20191194010028', '15779', 'aluno'),
+(3, '202300113', '54321', 'professor');
 
 --
 -- Índices para tabelas despejadas
@@ -216,6 +307,12 @@ ALTER TABLE `turnos`
   ADD PRIMARY KEY (`idTurnos`);
 
 --
+-- Índices de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT para tabelas despejadas
 --
 
@@ -223,55 +320,61 @@ ALTER TABLE `turnos`
 -- AUTO_INCREMENT de tabela `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `idAdmin` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idAdmin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `aluno`
 --
 ALTER TABLE `aluno`
-  MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `disciplinas`
 --
 ALTER TABLE `disciplinas`
-  MODIFY `idDisciplinas` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idDisciplinas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `historico_boletins`
 --
 ALTER TABLE `historico_boletins`
-  MODIFY `idHistorico_Boletins` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idHistorico_Boletins` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de tabela `mat_alunos_turmas`
 --
 ALTER TABLE `mat_alunos_turmas`
-  MODIFY `idMat_Alunos_Turmas` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idMat_Alunos_Turmas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de tabela `professores`
 --
 ALTER TABLE `professores`
-  MODIFY `idProfessores` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idProfessores` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `turmas`
 --
 ALTER TABLE `turmas`
-  MODIFY `idTurmas` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idTurmas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `turma_disc_professor`
 --
 ALTER TABLE `turma_disc_professor`
-  MODIFY `idTurma_Disc_Professor` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idTurma_Disc_Professor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `turnos`
 --
 ALTER TABLE `turnos`
-  MODIFY `idTurnos` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idTurnos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restrições para tabelas despejadas
@@ -281,15 +384,15 @@ ALTER TABLE `turnos`
 -- Restrições para tabelas `historico_boletins`
 --
 ALTER TABLE `historico_boletins`
-  ADD CONSTRAINT `fk_Historico_Boletins_Mat_Alunos_Turmas1` FOREIGN KEY (`Mat_Alunos_Turmas_idMat_Alunos_Turmas`) REFERENCES `mat_alunos_turmas` (`idMat_Alunos_Turmas`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Historico_Boletins_Turma_Disc_Professor1` FOREIGN KEY (`Turma_Disc_Professor_idTurma_Disc_Professor`) REFERENCES `turma_disc_professor` (`idTurma_Disc_Professor`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Historico_Boletins_Mat_Alunos_Turmas1` FOREIGN KEY (`Mat_Alunos_Turmas_idMat_Alunos_Turmas`) REFERENCES `mat_alunos_turmas` (`idMat_Alunos_Turmas`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Historico_Boletins_Turma_Disc_Professor1` FOREIGN KEY (`Turma_Disc_Professor_idTurma_Disc_Professor`) REFERENCES `turma_disc_professor` (`idTurma_Disc_Professor`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Restrições para tabelas `mat_alunos_turmas`
 --
 ALTER TABLE `mat_alunos_turmas`
-  ADD CONSTRAINT `fk_Mat_Alunos_Turmas_Aluno` FOREIGN KEY (`Aluno_idAluno`) REFERENCES `aluno` (`idAluno`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Mat_Alunos_Turmas_Turmas1` FOREIGN KEY (`Turmas_idTurmas`) REFERENCES `turmas` (`idTurmas`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Mat_Alunos_Turmas_Aluno` FOREIGN KEY (`Aluno_idAluno`) REFERENCES `aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Mat_Alunos_Turmas_Turmas1` FOREIGN KEY (`Turmas_idTurmas`) REFERENCES `turmas` (`idTurmas`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Restrições para tabelas `turmas`
@@ -301,9 +404,9 @@ ALTER TABLE `turmas`
 -- Restrições para tabelas `turma_disc_professor`
 --
 ALTER TABLE `turma_disc_professor`
-  ADD CONSTRAINT `fk_Turma_Disc_Professor_Disciplinas1` FOREIGN KEY (`Disciplinas_idDisciplinas`) REFERENCES `disciplinas` (`idDisciplinas`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Turma_Disc_Professor_Professores1` FOREIGN KEY (`Professores_idProfessores`) REFERENCES `professores` (`idProfessores`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Turma_Disc_Professor_Turmas1` FOREIGN KEY (`Turmas_idTurmas`) REFERENCES `turmas` (`idTurmas`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Turma_Disc_Professor_Disciplinas1` FOREIGN KEY (`Disciplinas_idDisciplinas`) REFERENCES `disciplinas` (`idDisciplinas`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Turma_Disc_Professor_Professores1` FOREIGN KEY (`Professores_idProfessores`) REFERENCES `professores` (`idProfessores`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Turma_Disc_Professor_Turmas1` FOREIGN KEY (`Turmas_idTurmas`) REFERENCES `turmas` (`idTurmas`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
