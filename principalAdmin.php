@@ -172,6 +172,9 @@
               case 'salvarmatAlunos':
                   include('salvarmatAlunos.php');
                   break;
+                  case 'salvarmatProfessores':
+                    include('salvarmatProfessores.php');
+                    break;
               case 'listarmatAlunos':
                   include('listarmatAlunos.php');
                   break;

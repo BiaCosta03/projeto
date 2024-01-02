@@ -61,7 +61,7 @@
             Diário
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="?#">Minhas turmas</a></li>
+            <li><a class="dropdown-item" href="?page=listarMatProfessores">Minhas turmas</a></li>
             <li><a class="dropdown-item" href="?page=cadastrarNota">Cadastrar notas</a></li>
           </ul>
         </li>
@@ -89,6 +89,9 @@
               break;
             case 'salvarnotas':
               include('salvarnotas.php');
+              case 'listarmatProfessores&idProfessor':
+                include('listarmatProfessores&idProfessor.php');
+                break;
               break;
               default:
               print"";

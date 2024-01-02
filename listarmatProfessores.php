@@ -1,5 +1,6 @@
 <?php
-	$sql = "SELECT * FROM turma_disc_professor ";
+
+	$sql = "SELECT * FROM turma_disc_professor";
 	$res = $mysqli->query($sql);
 	$qtd = $res->num_rows;
 
