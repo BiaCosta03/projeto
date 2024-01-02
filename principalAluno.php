@@ -51,22 +51,23 @@
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="principalAluno.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="principalAdmin.php">Home </a>
         </li>
           <li class="nav-item dropdown">
-          <a class="nav-link active" href="?page=boletim" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Boletim
           </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="?page=listarNota&idAluno">Minhas Notas</a></li>
+          </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link active" href="?page=infoUsuario" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Imformações Pessoais
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Turmas
           </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link active" href="?page=infoUsuario" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Minhas Turmas
-          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="?page=listarmatAlunos&idAluno">Minhas Turmas</a></li>
+          </ul>
         </li>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
@@ -82,13 +83,47 @@
 
             //include das páginas
             switch (@$_REQUEST['page']){
-              case 'boletim':
-                include('boletim.php');
+            //include das páginas
+  
+              case 'infoAluno':
+                include('infoAluno.php');
                 break;
 
-                case 'infoUsuario':
-                  include('infoUsuario.php');
+                
+                //Turmas
+              case 'cadastrarTurma':
+                include('cadastrarTurma.php');
+                break;
+              case 'cadastrarTurmas':
+                include('cadastrarTurmas.php');
+                break;
+              case 'listarTurmas':
+                include('listarTurmas.php');
+                break;
+              case 'salvarTurmas':
+                include('salvarTurmas.php');
+                break;
+
+                
+                //Matrículas
+              case 'salvarmatAlunos':
+                include('salvarmatAlunos.php');
+                break;
+            case 'listarmatAlunos':
+                include('listarmatAlunos.php');
+                break;
+            case 'matAlunosTurmas':
+                include('matAlunosTurmas.php');
+                break;
+
+                case 'cadastrarNota':
+                  include('cadastrarNota.php');
                   break;
+                case 'listarNota':
+                  include('listarNota.php');
+                  break;
+                case 'salvarnotas':
+                  include('salvarnotas.php');
 
               default:
               print"";
