@@ -62,7 +62,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="?#">Minhas turmas</a></li>
-            <li><a class="dropdown-item" href="?#">Cadastrar notas</a></li>
+            <li><a class="dropdown-item" href="?page=cadastrarNota">Cadastrar notas</a></li>
           </ul>
         </li>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -77,6 +77,22 @@
             //conexão com o banco
             include('conexao.php');
 
+            switch (@$_REQUEST['page']){
+            case 'cadastrarNota':
+              include('cadastrarNota.php');
+              break;
+            case 'listarNota':
+              include('listarNota.php');
+              break;
+            case 'editarNota':
+              include('editarNota.php');
+              break;
+            case 'salvarnotas':
+              include('salvarnotas.php');
+              break;
+              default:
+              print"";
+            }
           ?>
         </div>
       </div>

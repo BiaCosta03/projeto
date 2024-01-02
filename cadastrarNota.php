@@ -1,3 +1,70 @@
+<?php
+
+    include_once('conexao.php');
+
+    $botao = '';
+    $msg = '';
+    $nota1Bim = '';
+    $nota2Bim = '';
+    $nota3Bim = '';
+    $nota4Bim = '';
+    $provaFinal = '';
+    $mediaFinal = '';
+    $Mat_Alunos_Turmas_idMat_Alunos_Turmas = '';
+    $Turma_Disc_Professor_idTurma_Disc_Professor = '';
+    $resultado='';
+    
+
+    if(isset($_POST["enviar"])){
+        $botao = $_POST["enviar"];
+
+        if(isset($_POST["nota1Bim"])){
+            $nota1Bim = $_POST["nota1Bim"];
+        }
+
+        if(isset($_POST["nota2Bim"])){
+            $nota2Bim = $_POST["nota2Bim"];
+        }
+
+        if(isset($_POST["nota3Bim"])){
+            $nota3Bim = $_POST["nota3Bim"];
+        }
+
+        if(isset($_POST["nota4Bim"])){
+            $nota4Bim = $_POST["nota4Bim"];
+        }
+
+        if(isset($_POST["provaFinal"])){
+            $provaFinal = $_POST["provaFinal"];
+        }
+
+        if(isset($_POST["Mat_Alunos_Turmas_idMat_Alunos_Turmas"])){
+            $Mat_Alunos_Turmas_idMat_Alunos_Turmas = $_POST["Mat_Alunos_Turmas_idMat_Alunos_Turmas"];
+        }
+
+        if(isset($_POST["Turma_Disc_Professor_idTurma_Disc_Professor "])){
+            $Turma_Disc_Professor_idTurma_Disc_Professor  = $_POST["Turma_Disc_Professor_idTurma_Disc_Professor "];
+        }
+
+
+        $mediaFinal = ($nota1Bim + $nota2Bim
+            + $nota3Bim + $nota4Bim)/4 + $provaFinal ;
+
+        $msg = "O valor da média é " . $mediaFinal;
+        $resultado = "  " . $resultado;
+
+        if($mediaFinal >= 60 ){ // SE FOR MAIOR QUE 60, APROVADO.
+            $resultado = "Aprovado";
+    
+        } else if(// MENOR QUE 60, REPROVADO.
+            $mediaFinal <= 60){
+            $resultado = "Reprovado";
+            
+        }
+
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,24 +83,17 @@
     </style>
 </head>
 <body>
-    <form action="?page=salvarnotas" method="POST">
-	<input type="hidden" name="acao" value="cadastrar">
+ 
     <div class="mb-3">
 
             <h1>Cadastrar Notas</h1>
-            <form action="salvarnotas.php" method="POST">
+            <form action="?page=salvarnotas" method="POST">
+            <input type="hidden" name="acao" value="cadastrar">
             <div class="form-group">
-            <tr>
-                <td><label for="Mat_Alunos_Turmas_idMat_Alunos_Turmas">Código da matrícula do Aluno:</td>
-                <td><input class="form-control" type="text" id="Mat_Alunos_Turmas_idMat_Alunos_Turmas" name="Mat_Alunos_Turmas_idMat_Alunos_Turmas"></td>
-            </tr>
-            <tr>
-                <td><label for="Turma_Disc_Professor_idTurma_Disc_Professor">Código da matrícula do professor:</td>
-                <td><input class="form-control" type="text" id="Turma_Disc_Professor_idTurma_Disc_Professor" name="Turma_Disc_Professor_idTurma_Disc_Professor"></td>
-            </tr>
+            
         <tr>
                 <td><label for="nota1Bim">Nota 1:</td>
-                <td><input class="form-control" type="text" id="nota1Bim" name="nota1Bim"></td>
+                <td><input class="form-control" type="text" name="nota1Bim"></td>
             </tr>
 
             <tr>
@@ -60,10 +120,20 @@
                 <td><label for="mediaFinal">Média Final:</td>
                 <td><input class="form-control" type="text" name="mediaFinal"></td>
     </tr>
-
-    <div class="form-group">
-                <button class="btn btn-success" type="submit">Enviar</button>
+    <tr>
+                <td><label for="Mat_Alunos_Turmas_idMat_Alunos_Turmas">Código da matrícula do Aluno:</td>
+                <td><input class="form-control" type="text" id="Mat_Alunos_Turmas_idMat_Alunos_Turmas" name="Mat_Alunos_Turmas_idMat_Alunos_Turmas"></td>
+            </tr>
+            <tr>
+                <td><label for="Turma_Disc_Professor_idTurma_Disc_Professor">Código da matrícula do professor:</td>
+                <td><input class="form-control" type="text" id="Turma_Disc_Professor_idTurma_Disc_Professor" name="Turma_Disc_Professor_idTurma_Disc_Professor"></td>
+            </tr>
+           
+            <div class="form-group">
+                <button class="btn btn-success" type="submit" name="enviar">Enviar</button>
             </div>
+           
+
     </form>
 
 
