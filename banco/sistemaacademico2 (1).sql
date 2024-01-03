@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02/01/2024 às 03:19
+-- Tempo de geração: 03/01/2024 às 19:08
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -99,10 +99,17 @@ CREATE TABLE `historico_boletins` (
   `nota4Bim` double DEFAULT NULL,
   `provaFinal` double DEFAULT NULL,
   `mediaFinal` double DEFAULT NULL,
-  `resultado` varchar(45) NOT NULL,
+  `resultado` varchar(45) DEFAULT NULL,
   `Mat_Alunos_Turmas_idMat_Alunos_Turmas` int(11) NOT NULL,
   `Turma_Disc_Professor_idTurma_Disc_Professor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `historico_boletins`
+--
+
+INSERT INTO `historico_boletins` (`idHistorico_Boletins`, `nota1Bim`, `nota2Bim`, `nota3Bim`, `nota4Bim`, `provaFinal`, `mediaFinal`, `resultado`, `Mat_Alunos_Turmas_idMat_Alunos_Turmas`, `Turma_Disc_Professor_idTurma_Disc_Professor`) VALUES
+(36, 60, 60, 60, 60, 0, 60, 'Aprovado', 14, 3);
 
 -- --------------------------------------------------------
 
@@ -125,7 +132,8 @@ INSERT INTO `mat_alunos_turmas` (`idMat_Alunos_Turmas`, `Aluno_idAluno`, `Turmas
 (16, 3, 7),
 (19, 2, 9),
 (22, 2, 9),
-(23, 2, 9);
+(23, 2, 9),
+(24, 3, 7);
 
 -- --------------------------------------------------------
 
@@ -338,13 +346,13 @@ ALTER TABLE `disciplinas`
 -- AUTO_INCREMENT de tabela `historico_boletins`
 --
 ALTER TABLE `historico_boletins`
-  MODIFY `idHistorico_Boletins` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `idHistorico_Boletins` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de tabela `mat_alunos_turmas`
 --
 ALTER TABLE `mat_alunos_turmas`
-  MODIFY `idMat_Alunos_Turmas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `idMat_Alunos_Turmas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de tabela `professores`
@@ -384,15 +392,15 @@ ALTER TABLE `usuarios`
 -- Restrições para tabelas `historico_boletins`
 --
 ALTER TABLE `historico_boletins`
-  ADD CONSTRAINT `fk_Historico_Boletins_Mat_Alunos_Turmas1` FOREIGN KEY (`Mat_Alunos_Turmas_idMat_Alunos_Turmas`) REFERENCES `mat_alunos_turmas` (`idMat_Alunos_Turmas`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Historico_Boletins_Turma_Disc_Professor1` FOREIGN KEY (`Turma_Disc_Professor_idTurma_Disc_Professor`) REFERENCES `turma_disc_professor` (`idTurma_Disc_Professor`) ON DELETE CASCADE ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Historico_Boletins_Mat_Alunos_Turmas1` FOREIGN KEY (`Mat_Alunos_Turmas_idMat_Alunos_Turmas`) REFERENCES `mat_alunos_turmas` (`idMat_Alunos_Turmas`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_Historico_Boletins_Turma_Disc_Professor1` FOREIGN KEY (`Turma_Disc_Professor_idTurma_Disc_Professor`) REFERENCES `turma_disc_professor` (`idTurma_Disc_Professor`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Restrições para tabelas `mat_alunos_turmas`
 --
 ALTER TABLE `mat_alunos_turmas`
-  ADD CONSTRAINT `fk_Mat_Alunos_Turmas_Aluno` FOREIGN KEY (`Aluno_idAluno`) REFERENCES `aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Mat_Alunos_Turmas_Turmas1` FOREIGN KEY (`Turmas_idTurmas`) REFERENCES `turmas` (`idTurmas`) ON DELETE CASCADE ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Mat_Alunos_Turmas_Aluno` FOREIGN KEY (`Aluno_idAluno`) REFERENCES `aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_Mat_Alunos_Turmas_Turmas1` FOREIGN KEY (`Turmas_idTurmas`) REFERENCES `turmas` (`idTurmas`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Restrições para tabelas `turmas`
@@ -404,9 +412,9 @@ ALTER TABLE `turmas`
 -- Restrições para tabelas `turma_disc_professor`
 --
 ALTER TABLE `turma_disc_professor`
-  ADD CONSTRAINT `fk_Turma_Disc_Professor_Disciplinas1` FOREIGN KEY (`Disciplinas_idDisciplinas`) REFERENCES `disciplinas` (`idDisciplinas`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Turma_Disc_Professor_Professores1` FOREIGN KEY (`Professores_idProfessores`) REFERENCES `professores` (`idProfessores`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Turma_Disc_Professor_Turmas1` FOREIGN KEY (`Turmas_idTurmas`) REFERENCES `turmas` (`idTurmas`) ON DELETE CASCADE ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Turma_Disc_Professor_Disciplinas1` FOREIGN KEY (`Disciplinas_idDisciplinas`) REFERENCES `disciplinas` (`idDisciplinas`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_Turma_Disc_Professor_Professores1` FOREIGN KEY (`Professores_idProfessores`) REFERENCES `professores` (`idProfessores`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_Turma_Disc_Professor_Turmas1` FOREIGN KEY (`Turmas_idTurmas`) REFERENCES `turmas` (`idTurmas`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
