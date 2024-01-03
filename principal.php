@@ -62,7 +62,7 @@ body{
  }
 
  .informacoes{
-    background-image: url('img/SIGAP.png');/*Precisamos de uma imagem de fundo*/
+    background-image: url('img/SIGAP.png');
     background-repeat: no-repeat;
     background-position: center;
     color: orange;
@@ -106,7 +106,6 @@ body{
 
     </style>
 
-
 </head>
 <body>
     <div class="secao">
@@ -129,12 +128,12 @@ body{
                 <h1>Login</h1>
 
                 <p>
-                <label>Matrícula</label>
+                <label>Matrícula:</label>
                 <input type="varchar" name="matricula">
                 </p>
 
                 <p>
-                <label>Senha</label>
+                <label>Senha:</label>
                 <input type="varchar" name="senha">
                 </p>
 
