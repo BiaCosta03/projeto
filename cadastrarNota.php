@@ -12,7 +12,6 @@
     $mediaFinal = '';
     $Mat_Alunos_Turmas_idMat_Alunos_Turmas = '';
     $Turma_Disc_Professor_idTurma_Disc_Professor = '';
-    $resultado='';
     
 
     if(isset($_POST["enviar"])){
@@ -127,6 +126,10 @@
             <tr>
                 <td><label for="Turma_Disc_Professor_idTurma_Disc_Professor">Código da matrícula do professor:</td>
                 <td><input class="form-control" type="text" id="Turma_Disc_Professor_idTurma_Disc_Professor" name="Turma_Disc_Professor_idTurma_Disc_Professor"></td>
+            </tr>
+            <tr>
+                <td><label for="resultado">Resultado:</td>
+                <td><input class="form-control" type="text" id="resultado" name="resultado"></td>
             </tr>
            
             <div class="form-group">

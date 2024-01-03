@@ -48,11 +48,11 @@
 			print "<td>".$row->nota4Bim."</td>";
 			print "<td>".$row->provaFinal."</td>";
 			print "<td>".$row->mediaFinal."</td>";
-			echo "<td>".$row->resultado."</td>";
+			print "<td>".$row->resultado."</td>";
 			print "<td>".$row->Mat_Alunos_Turmas_idMat_Alunos_Turmas."</td>";
 			print "<td>".$row->Turma_Disc_Professor_idTurma_Disc_Professor ."</td>";
 			print "<td>
-					 <button onclick=\"location.href='?page=editarNotas&idHistorico_Boletins=".$row->idHistorico_Boletins."';\" class='btn btn-primary'>Editar</button>
+					 <button onclick=\"location.href='?page=editarNota&idHistorico_Boletins=".$row->idHistorico_Boletins."';\" class='btn btn-primary'>Editar</button>
 
 					 <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvarnotas&acao=excluir&idHistorico_Boletins=".$row->idHistorico_Boletins."';}else{false;}\"  class='btn btn-danger'>Excluir</button>
 			       </td>";

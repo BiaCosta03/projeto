@@ -3,7 +3,7 @@ include_once('conexao.php');
 
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
-   $matricula=$_POST["matricula"];
+   $matrícula=$_POST["matricula"];
    $senha=$_POST["senha"];
 
    $sql = "SELECT * FROM usuarios where matricula= '".$matricula."' AND senha='".$senha."'";
@@ -16,21 +16,8 @@ if($row["username"]=="admin");
    header("location:principalAdmin.php");
 }
 
-if($row["username"]=="aluno");
-{
-   
-   header("location:principalAluno.php");
 }
-
-if($row["username"]=="professor");
-{
-   
-   header("location:principalProfessor.php");
-}
-
-}
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset='utf-8'>
@@ -138,7 +125,7 @@ body{
             <div class="login">
 
                 <div class="formlogin">
-                <form action="#" method="POST">
+                <form action="" method="POST">
                 <h1>Login</h1>
 
                 <p>
