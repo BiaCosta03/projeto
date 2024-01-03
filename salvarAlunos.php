@@ -2,7 +2,7 @@
 	switch ($_REQUEST ['acao']) {
 		case 'cadastrar':
 			$sql = "INSERT INTO aluno (
-					idAluno,
+					/*idAluno,*/
 					nome,
                     matrícula,
 					senha,
@@ -10,7 +10,7 @@
 					telefone,
 					data_nascimento                                                                                                              
 					)VALUES(
-						'".$_POST["idAluno"]."',
+						/*'".$_POST["idAluno"]."',*/
 						'".$_POST["nome"]."',
                         '".$_POST["matrícula"]."',
 						'".$_POST["senha"]."',
