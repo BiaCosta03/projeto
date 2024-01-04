@@ -1,11 +1,9 @@
 <?php
 $servername = "localhost";
 $database = "sistemaacademico2";
-//$username = "root";
-//$password = "";
+$username = "root";
+$password = "";
 
-$username = "useracad";
-$password = "123";
 
 $mysqli = new mysqli($servername, $username, $password, $database);
 if ($mysqli->connect_errno) {
