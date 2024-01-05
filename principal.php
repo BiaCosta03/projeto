@@ -125,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       .me{
          width: 100%;
          padding: 10px;
-         margin-bottom: 20px;
+         margin-bottom: 30px;
          box-sizing: border-box;
          border: 1px solid #006400;
          outline: none;
