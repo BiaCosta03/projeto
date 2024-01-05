@@ -56,6 +56,30 @@
     </tr>
     
     <tr>
+         <td><label for="Disciplinas_idDisciplinas">Disciplina</td>
+
+         <td>
+            <select name="Disciplinas_idDisciplinas" id="Disciplinas_idDisciplinas" class="form-control">
+ 
+            <?php
+            $sql = "SELECT * FROM disciplinas";
+            $res = $mysqli->query($sql);
+            $qtd = $res->num_rows;
+                                
+            if($qtd > 0){
+            while($row = $res->fetch_object()){
+            echo "<option value='". $row->idDsciplinas . "'>" .$row->nome. "</option>";
+
+        }
+            }else{
+            echo "<option value='-1'>----</option>";
+                }
+            ?>
+            </select>
+        </td>
+    </tr>
+
+    <tr>
          <td><label for="Turmas_idTurmas">Turma</td>
 
          <td>
@@ -79,29 +103,6 @@
         </td>
     </tr>
 
-    <tr>
-         <td><label for="Disciplinas_idDisciplinas">Disciplina</td>
-
-         <td>
-            <select name="Disciplinas_idDisciplinas" id="Disciplinas_idDisciplinas" class="form-control">
- 
-            <?php
-            $sql = "SELECT * FROM disciplinas";
-            $res = $mysqli->query($sql);
-            $qtd = $res->num_rows;
-                                
-            if($qtd > 0){
-            while($row = $res->fetch_object()){
-            echo "<option value='". $row->idDsciplinas . "'>" .$row->nome. "</option>";
-
-        }
-            }else{
-            echo "<option value='-1'>----</option>";
-                }
-            ?>
-            </select>
-        </td>
-    </tr>
        
     <button class="btn btn-success" type="submit">Cadastrar</button>
     </div>

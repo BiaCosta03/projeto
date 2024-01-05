@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    <link rel='stylesheet' type='text/css'>
    <title>SIGAP</title>
    <style>
-      body {
+     body {
          background-color: #91DF76;
          width: 100%;
          height: 580px;
@@ -121,6 +121,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          width: fit-content;
          text-decoration: none;
       }
+
+
+      
    </style>
 
 </head>
@@ -149,15 +152,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   <h2> <?php echo $msg_erro ?> </h2>
                   <h1>Login</h1>
 
-                  <p>
-                     <label>Matrícula:</label>
-                     <input type="varchar" name="matricula">
-                  </p>
-
-                  <p>
-                     <label>Senha:</label>
-                     <input type="varchar" name="senha">
-                  </p>
+                  
+                  <div>
+                  <label class="ma" >Matrícula</label>
+                  <input class="me" type="varchar" name="matricula" />
+                  </div>
+                  </br>
+                  
+                  <div>
+                  <label class="ma" >Senha</label>
+                  <input class="me" type="password" name="senha" />
+                  </div>
+                  </br>
+                  
+                  
 
                   <input class="botaoform" type="submit" value="Entrar">
 

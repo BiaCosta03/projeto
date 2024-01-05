@@ -11,6 +11,7 @@
         <div class="col-12">
             <h1>Lista de professores matriculados na turma</h1>
         </div>
+
 		<?php
         if($qtd > 0){
 		print "<p>Encontrou <b>$qtd</b> resultado(s).</p>";

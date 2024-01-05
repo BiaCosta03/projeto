@@ -3,13 +3,15 @@
 		case 'cadastrar':
 			$sql = "INSERT INTO turma_disc_professor (
 					Turmas_idTurmas,
-                    Disciplinas_idDisciplinas,
+					Disciplinas_idDisciplinas,
                     Professores_idProfessores
+					
 
 					)VALUES(
 						'".$_POST["Turmas_idTurmas"]."',
 						'".$_POST["Disciplinas_idDisciplinas"]."',
                         '".$_POST["Professores_idProfessores"]."'
+						
 					)";
 
 			$res = $mysqli->query($sql);
