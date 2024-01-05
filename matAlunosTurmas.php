@@ -1,6 +1,5 @@
 <?php
  $sql = "SELECT * FROM mat_alunos_turmas";
- $sql = "SELECT * FROM turmas WHERE idTurmas=".$_REQUEST['idTurmas'];
  $res = $mysqli->query($sql);
  $row = $res->fetch_object();
  include_once('conexao.php');
@@ -28,16 +27,56 @@
 
     <h1>Matricular Aluno na Turma</h1>
     <form action="salvarmatAlunos.php" method="POST">
-    <input type="hidden" name="idTurmas" value="<?php print $row->idTurmas; ?>">
-            <div class="form-group">
-            <tr>
-                <td><label for="Aluno_idAluno">Código do Aluno</td>
-                <td><input name="Aluno_idAluno" id="Aluno_idAluno" required type="text" class="form-control" placeholder="Código"></td>
+
+    <tr>
+         <td><label for="Aluno_idAluno">Aluno</td>
+
+         <td>
+            <select name="Aluno_idAluno" id="Aluno_idAluno" class="form-control">
+ 
+            <?php
+            $sql = "SELECT * FROM aluno";
+            $res = $mysqli->query($sql);
+            $qtd = $res->num_rows;
+                                
+            if($qtd > 0){
+            while($row = $res->fetch_object()){
+            echo "<option value='". $row->idAluno . "'>" .$row->nome. "</option>";
+
+        }
+            }else{
+            echo "<option value='-1'>----</option>";
+                }
+            ?>
+            </select>
+        </td>
     </tr>
-            <tr>
-                <td><label for="Turmas_idTurmas">Nome da Turma</td>
-                <td><input value="<?php print $row->nome ?>" name="Turmas_idTurmas" id="Turmas_idTurmas" required type="text" class="form-control" placeholder="Código"><td>
-            </td>
+    
+    <tr>
+         <td><label for="Turmas_idTurmas">Turma</td>
+
+         <td>
+            <select name="Turmas_idTurmas" id="Turmas_idTurmas" class="form-control">
+ 
+            <?php
+            $sql = "SELECT * FROM turmas";
+            $res = $mysqli->query($sql);
+            $qtd = $res->num_rows;
+                                
+            if($qtd > 0){
+            while($row = $res->fetch_object()){
+            echo "<option value='". $row->idTurmas . "'>" .$row->nome. "</option>";
+
+        }
+            }else{
+            echo "<option value='-1'>----</option>";
+                }
+            ?>
+            </select>
+        </td>
+    </tr>
+
+           
                 <button class="btn btn-success" type="submit">Cadastrar</button>
             </div>
         </form>

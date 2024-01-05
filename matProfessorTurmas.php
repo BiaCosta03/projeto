@@ -1,6 +1,5 @@
 <?php
  $sql = "SELECT * FROM turma_disc_professor";
- $sql = "SELECT * FROM turmas WHERE idTurmas=".$_REQUEST['idTurmas'];
  $res = $mysqli->query($sql);
  $row = $res->fetch_object();
  include_once('conexao.php');
@@ -28,22 +27,86 @@
 
     <h1>Matricular professor na Turma</h1>
     <form action="salvarmatProfessor.php" method="POST">
-    <input type="hidden" name="idTurmas" value="<?php print $row->idTurmas; ?>">
+    
             <div class="form-group">
-            <tr>
-                <td><label for="Turmas_idTurmas">Nome da Turma</td>
-                <td><input value="<?php print $row->nome; ?>" name="Turmas_idTurmas" id="Turmas_idTurmas" required type="text" class="form-control" placeholder="Código"></td>
+     
+    
+    <tr>
+         <td><label for="Professores_idProfessores">Professor</td>
+
+         <td>
+            <select name="Professores_idProfessores" id="Professores_idProfessores" class="form-control">
+ 
+            <?php
+            $sql = "SELECT * FROM professores";
+            $res = $mysqli->query($sql);
+            $qtd = $res->num_rows;
+                                
+            if($qtd > 0){
+            while($row = $res->fetch_object()){
+            echo "<option value='". $row->idProfessores . "'>" .$row->nome. "</option>";
+
+        }
+            }else{
+            echo "<option value='-1'>----</option>";
+                }
+            ?>
+            </select>
+        </td>
     </tr>
-            <tr>
-                <td><label for="Disciplinas_idDisciplinas">Código da Disciplina</td>
-                <td><input name="Disciplinas_idDisciplinas" id="Disciplinas_idDisciplinas" required type="text" class="form-control" placeholder="Código"><td>
+    
+    <tr>
+         <td><label for="Turmas_idTurmas">Turma</td>
+
+         <td>
+            <select name="Turmas_idTurmas" id="Turmas_idTurmas" class="form-control">
+ 
+            <?php
+            $sql = "SELECT * FROM turmas";
+            $res = $mysqli->query($sql);
+            $qtd = $res->num_rows;
+                                
+            if($qtd > 0){
+            while($row = $res->fetch_object()){
+            echo "<option value='". $row->idTurmas . "'>" .$row->nome. "</option>";
+
+        }
+            }else{
+            echo "<option value='-1'>----</option>";
+                }
+            ?>
+            </select>
+        </td>
     </tr>
-            <tr>
-                <td><label for="Professores_idProfessores">Código do Professor</td>
-                <td><input name="Professores_idProfessores" id="Professores_idProfessores" required type="text" class="form-control" placeholder="Código"><td>
+
+    <tr>
+         <td><label for="Disciplinas_idDisciplinas">Disciplina</td>
+
+         <td>
+            <select name="Disciplinas_idDisciplinas" id="Disciplinas_idDisciplinas" class="form-control">
+ 
+            <?php
+            $sql = "SELECT * FROM disciplinas";
+            $res = $mysqli->query($sql);
+            $qtd = $res->num_rows;
+                                
+            if($qtd > 0){
+            while($row = $res->fetch_object()){
+            echo "<option value='". $row->idDsciplinas . "'>" .$row->nome. "</option>";
+
+        }
+            }else{
+            echo "<option value='-1'>----</option>";
+                }
+            ?>
+            </select>
+        </td>
     </tr>
-                <button class="btn btn-success" type="submit">Cadastrar</button>
-            </div>
-        </form>
+       
+    <button class="btn btn-success" type="submit">Cadastrar</button>
+    </div>
+
+    </form>
+
 </body>
 </html>

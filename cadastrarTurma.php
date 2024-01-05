@@ -30,7 +30,7 @@ include_once('conexao.php');
     <form action="?page=salvarTurmas" method="POST">
         <input type="hidden" name="acao" value="cadastrar">
         <div class="mb-3">
-            OK
+            
             <h1>Cadastrar Turmas</h1>
             <form action="salvarTurmas.php" method="POST">
                 <input type="hidden" name="idTurnos" value="<?php print $row->idTurnos; ?>">
@@ -41,8 +41,9 @@ include_once('conexao.php');
                 </tr>
                 <tr>
                     <td><label for="Turnos_idTurnos">Turno</td>
+
                     <td>
-                        <select name="Turnos_idTurnos" id="Turnos_idTurnos">
+                        <select name="Turnos_idTurnos" id="Turnos_idTurnos" class="form-control">
  
                             <?php
                                 $sql = "SELECT * FROM turnos";
@@ -61,9 +62,11 @@ include_once('conexao.php');
                         </select>
                     </td>
                 </tr>
+                
                 <div class="form-group">
                     <button class="btn btn-success" type="submit">Cadastrar</button>
                 </div>
+                
             </form>
 </body>
 

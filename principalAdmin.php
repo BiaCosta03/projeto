@@ -65,6 +65,7 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="?page=cadastrarAlunos">Cadastrar Alunos</a></li>
             <li><a class="dropdown-item" href="?page=listarAlunos">Listar Alunos</a></li>
+            <li><a class="dropdown-item" href="?page=matAlunosTurmas">Matricular Alunos</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -74,6 +75,16 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="?page=cadastrarProfessores">Cadastrar Professores</a></li>
             <li><a class="dropdown-item" href="?page=listarProfessores">Listar Professores</a></li>
+            <li><a class="dropdown-item" href="?page=matProfessorTurmas">Matricular Professores</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Gerenciar Turnos
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="?page=cadastrarTurno">Cadastrar Turnos</a></li>
+            <li><a class="dropdown-item" href="?page=listarTurnos">Listar Turnos</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -92,15 +103,6 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="?page=cadastrarDisciplinas">Cadastrar Disciplinas</a></li>
             <li><a class="dropdown-item" href="?page=listarDisciplinas">Listar Disciplinas</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Gerenciar Turnos
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="?page=cadastrarTurno">Cadastrar Turnos</a></li>
-            <li><a class="dropdown-item" href="?page=listarTurnos">Listar Turnos</a></li>
           </ul>
         </li>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -134,7 +136,7 @@
                   include('infoAluno.php');
                   break;
 
-                //Professoresofessores
+                //Professores
               case 'cadastrarProfessores':
                 include('cadastrarProfessores.php');
                 break;
