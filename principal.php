@@ -122,6 +122,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          text-decoration: none;
       }
 
+      .me{
+         width: 100%;
+         padding: 10px;
+         margin-bottom: 20px;
+         box-sizing: border-box;
+         border: 1px solid #006400;
+         outline: none;
+         background-color: #f1f1f1;
+      }
+
 
       
    </style>
@@ -154,13 +164,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                   
                   <div>
-                  <label class="ma" >Matrícula</label>
+                  <label >Matrícula</label>
                   <input class="me" type="varchar" name="matricula" />
                   </div>
                   </br>
                   
                   <div>
-                  <label class="ma" >Senha</label>
+                  <label >Senha</label>
                   <input class="me" type="password" name="senha" />
                   </div>
                   </br>
