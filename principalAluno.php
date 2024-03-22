@@ -14,13 +14,12 @@
       li {
         display: inline;
     }
-      a{
+    a{
         display: block;
         padding: 70px 0;
         background-color: #98FB98;
-        margin-left: 140px;
+        margin-left: 120px;
         width: 100%;
-        text-align: center;
       }
       img{
         max-width: 25+0px;
