@@ -18,7 +18,7 @@
         display: block;
         padding: 70px 0;
         background-color: #98FB98;
-        margin-left: 95px;
+        margin-left: 140px;
         width: 100%;
         text-align: center;
       }
