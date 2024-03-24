@@ -24,7 +24,7 @@
 	<input type="hidden" name="acao" value="cadastrar">
     <div class="mb-3">
 
-    <h1>Cadastrar Alunos</h1>
+    <h1>Cadastrar Turnos</h1>
         <form action="salvarTurnos.php" method="POST">
             <tr>
                 <td><label for="nome">Nome</td>

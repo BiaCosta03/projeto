@@ -65,8 +65,8 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="?page=cadastrarAlunos">Cadastrar Alunos</a></li>
             <li><a class="dropdown-item" href="?page=listarAlunos">Listar Alunos</a></li>
-            <li><a class="dropdown-item" href="?page=matAlunosTurmas">Matricular Alunos</a></li>
-            <li><a class="dropdown-item" href="?page=listarmatAlunos">Professores Matriculados</a></li>
+            <li><a class="dropdown-item" href="?page=matAlunosTurmas">Vincular Alunos</a></li>
+            <li><a class="dropdown-item" href="?page=listarmatAlunos">Alunos Cadastrados</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -76,8 +76,8 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="?page=cadastrarProfessores">Cadastrar Professores</a></li>
             <li><a class="dropdown-item" href="?page=listarProfessores">Listar Professores</a></li>
-            <li><a class="dropdown-item" href="?page=matProfessorTurmas">Matricular Professores</a></li>
-            <li><a class="dropdown-item" href="?page=listarmatProfessores">Professores Matriculados</a></li>
+            <li><a class="dropdown-item" href="?page=matProfessorTurmas">Vincular Professores</a></li>
+            <li><a class="dropdown-item" href="?page=listarmatProfessores">Professores Cadastrados</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
